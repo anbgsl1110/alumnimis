@@ -1,0 +1,2 @@
+/home/aqc/文档/2_repo/AlumniMis/AlumniMis/obj/Debug/AlumniMis.Web.csprojResolveAssemblyReference.cache
+/home/aqc/文档/2_repo/AlumniMis/AlumniMis/obj/Debug/AlumniMis.Web.csproj.CoreCompileInputs.cache
