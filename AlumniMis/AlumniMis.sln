@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlumniMis.Web", "AlumniMis.Web\AlumniMis.Web.csproj", "{5AF34FED-CA0E-4035-B36A-733D18A868FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluminumMis.Common", "AluminumMis.Common\AluminumMis.Common.csproj", "{898EBF4C-62C2-4D53-9398-F9FD7DF4DF1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5AF34FED-CA0E-4035-B36A-733D18A868FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AF34FED-CA0E-4035-B36A-733D18A868FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AF34FED-CA0E-4035-B36A-733D18A868FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898EBF4C-62C2-4D53-9398-F9FD7DF4DF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898EBF4C-62C2-4D53-9398-F9FD7DF4DF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898EBF4C-62C2-4D53-9398-F9FD7DF4DF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898EBF4C-62C2-4D53-9398-F9FD7DF4DF1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
