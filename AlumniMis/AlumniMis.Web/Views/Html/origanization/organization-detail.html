@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>校友组织详情页</title>
+    <link href="../../Content/css/layout.css" rel="stylesheet">
+    <link href="../../Content/css/style.css" rel="stylesheet">
+    <link href="../../Content/css/New-style.css" rel="stylesheet">
+
+    <style>
+        .newwin{
+            background:#fff;
+            padding:50px;
+        }
+        .detail-org  div{
+            width:100%;
+            line-height:24px;
+            margin-bottom:10px;
+            border-bottom:1px dashed #ccc;
+        }
+
+        .detail-org  div p{
+            line-height:24px;
+        }
+        .detail-org .marginBottom{
+            margin-bottom:0px;
+        }
+        .add{
+            width:100%;
+            height:20px;
+            line-height:24px;
+            text-align:right;
+            cursor:pointer;
+        }
+        .add span{
+            display:inline-block;
+            line-height:24px;
+
+        }
+        .add img{
+            margin-top:-2px;
+            margin-right:4px;
+        }
+
+        .new-win{
+            position:fixed;
+            width:360px;
+            padding:20px;
+            height:300px !important;
+            border:1px solid #ccc;
+            left:30%;
+            top:20%;
+            background:#fff;
+        }
+        .cancel{
+            position:absolute;
+            top:2px;
+            right:4px;
+        }
+        .new-win input{
+            border:1px solid #ccc;
+            line-height:24px;
+        }
+        .sub{
+            border-radius:5px;
+            width:auto;
+            height:24px;
+            line-height:24px;
+            background:#00b4f5;
+            margin-left:260px;
+            text-align:center;
+
+        }
+        .sub input{
+            background:none;
+            border: 0 none;
+            color:#fff;
+        }
+        textarea{
+            height:100px;
+        }
+    </style>
+</head>
+<body class="body-bgColor">
+<div class="body-layout">
+    <!-- 顶部导航与logo begin {-->
+    <div class="new-navbar-box new-navbar-fixed-top">
+        <div class="new-navbar-top" style="display: block;">
+            <div class="new-navbar-top-content">
+                <h3 class="new-navbar-top-title">校友信息管理系统</h3>
+                <div class="new-navbar-userID">
+                    欢迎校友<span class="new-navbar-userName">周树琴</span><em class="Drop-icon"></em>
+                    <div class="Drop-box">
+                        <span class="Drop-box-item">修改密码</span>
+                        <span class="Drop-box-item">注销</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-navbar">
+            <div class="new-container clearfix">
+                <div class="new-navbar-header" style="display: block;">
+                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="../../Content/images/school-log.jpg" width="50" height="50"></a>
+                </div>
+                <div class="new-navbar-nav navbar-content">
+                    <!-- 导航里面的一级导航 begin {-->
+                    <ul class="new-navbar-nav-left clearfix">
+                        <li class="new-navbar-nav-item"><a href="#">首页</a></li>
+                        <li class="new-navbar-nav-item"><a href="#"  class="nav-current">校友组织</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友天地</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友服务</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友捐赠</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">联系我们</a></li>
+                    </ul>
+                    <!--} 导航里面的一级导航 end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--} 顶部导航与logo end -->
+    <div class="new-container  newwin">
+        您的位置：<a href="organization-list.html" class="user-address">校友组织</a> <em>&#62</em><a href="class-list.html" class="user-address">班级列表</a><em>&#62</em> 班级详情
+        <div class="add">
+            <img src="../../Content/images/btn_teacher_add.png" width="20" height="20"/><span>加入组织</span>
+        </div>
+        <div class="detail-org">
+            <div><span>组织名称：</span><span>安徽校友组织</span></div>
+            <div><span>组织创建时间：</span><span>2017-5-2</span></div>
+            <div><span>组织创建人：</span><span>安徽2013级校友</span></div>
+            <div><span>组织负责人：</span><span>安徽2013级校友</span></div>
+            <div><span>负责人联系方式：</span><span>13500005000</span></div>
+            <div><span>组织成员： </span><span>113人</span></div>
+            <div class="marginBottom"><span>组织介绍：</span>
+                <p>
+                    这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的
+                    这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的
+                </p>
+            </div>
+
+           </div>
+    </div>
+    <div class="new-win">
+        <i class="cancel"><img src="../../Content/images/icon_delete_1.png"/></i>
+        <p>申请加入组织</p>
+        <p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:&nbsp; <input type="text" name="name" /></p>
+        <p>联系方式:&nbsp; <input type="text" name="tel" /></p>
+        申请原因：<textarea></textarea>
+       <div class="sub"> <input type="submit" value="提交申请" /></div>
+    </div>
+</div>
+<script src="../../scripts/jquery.min.js">
+</script>
+<script>
+
+</script>
+</body>
+</html>
