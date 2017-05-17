@@ -176,6 +176,7 @@
     <Content Include="Content\images\bg_tips7.png" />
     <Content Include="Content\images\bg_toolbar1.gif" />
     <Content Include="Content\images\bg_toolbar2.gif" />
+    <Content Include="Content\images\big-logo.jpg" />
     <Content Include="Content\images\btn-export.png" />
     <Content Include="Content\images\btn-export2.png" />
     <Content Include="Content\images\btn-send-out.png" />
@@ -264,10 +265,12 @@
     <Content Include="Content\images\pic_course.png" />
     <Content Include="Content\images\pic_course02.png" />
     <Content Include="Content\images\pic_head3.jpg" />
+    <Content Include="Content\images\school-log.jpg" />
     <Content Include="Content\images\sort.png" />
     <Content Include="Content\images\toptriangle.png" />
     <Content Include="Content\images\triangle-block.png" />
     <Content Include="Content\images\triangle.jpg" />
+    <Content Include="Content\images\weixin-weibo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -299,6 +302,7 @@
     <Content Include="Views\Html\Donate\create-donate.html" />
     <Content Include="Views\Html\Donate\donate-detail.html" />
     <Content Include="Views\Html\Donate\donate-list.html" />
+    <Content Include="Views\Html\hearder-mode.html" />
     <Content Include="Views\Html\news\home-page.html" />
     <Content Include="Views\Html\news\news-detail.html" />
     <Content Include="Views\Html\origanization\class-list.html" />
