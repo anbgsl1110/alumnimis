@@ -69,12 +69,24 @@
     <Compile Include="DataTable\User.cs" />
     <Compile Include="DbFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\IProvider\IActivityProvider.cs" />
+    <Compile Include="Provider\IProvider\IAdminInfoProvider.cs" />
+    <Compile Include="Provider\IProvider\IAlumniInfoProvider.cs" />
+    <Compile Include="Provider\IProvider\IAlumniOrganProvider.cs" />
+    <Compile Include="Provider\IProvider\IBaseProvider.cs" />
+    <Compile Include="Provider\IProvider\IDonateProvider.cs" />
+    <Compile Include="Provider\IProvider\INewReleaseProvider.cs" />
+    <Compile Include="Provider\IProvider\IRequestServiceProvider.cs" />
     <Compile Include="Provider\IProvider\IUserProvider.cs" />
+    <Compile Include="Provider\Provider\ActivityProvider.cs" />
+    <Compile Include="Provider\Provider\AdminInfoProvider.cs" />
+    <Compile Include="Provider\Provider\AlumniInfoProvider.cs" />
+    <Compile Include="Provider\Provider\AlumniOrganProvider.cs" />
+    <Compile Include="Provider\Provider\BaseProvider.cs" />
+    <Compile Include="Provider\Provider\DonateProvider.cs" />
+    <Compile Include="Provider\Provider\NewReleaseProvider.cs" />
+    <Compile Include="Provider\Provider\RequestServiceProvider.cs" />
     <Compile Include="Provider\Provider\UserProvider.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enum\" />
-    <Folder Include="ServiceModel\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

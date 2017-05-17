@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using AlumniMis.Common.Util;
 using AlumniMis.Data.DataTable;
-using AlumniMis.Data.Provider.IProvider;
-using AlumniMis.Data.Provider.Provider;
+using AlumniMis.Services.Service.Service;
 using Xunit;
 
-namespace AlumniMis.Test.Provider
+namespace AlumniMis.Test.Service
 {
-    public class UserProviderTest
+    /// <summary>
+    /// 用户服务单元测试
+    /// </summary>
+    public class UserServiceTest
     {
-        private readonly UserProvider _provider;
+        private readonly UserService _service;
 
-        public UserProviderTest()
+        public UserServiceTest()
         {
-            _provider = new UserProvider();
+            _service = new UserService();
         }
 
         /// <summary>
@@ -24,15 +26,15 @@ namespace AlumniMis.Test.Provider
         [Fact]
         public void SelectTest()
         {
-            var user = _provider.Select(new User(), 4);
-            var users = _provider.Select(new User(), 0, 1000);
+            var user = _service.Select(new User(), 4);
+            var users = _service.Select(new User(), 0, 1000);
             IDictionary<string, object> parameters = new Dictionary<string, object>
             {
                 {@"PageIndex", 1},
                 {@"PageSize", 100}
             };
 
-            var result= _provider.Select<User>(parameters);
+            var result= _service.Select<User>(parameters);
             Assert.NotNull(result);
         }
 
@@ -42,7 +44,7 @@ namespace AlumniMis.Test.Provider
         [Fact]
         public void DeleteTest()
         {
-            _provider.Delete(new User(), 3);
+            var result = _service.Delete(new User(), 3);
         }
 
         /// <summary>
@@ -53,14 +55,14 @@ namespace AlumniMis.Test.Provider
         {
             var user = new User
             {
-                UserName = "单元测试",
+                UserName = "service测试",
                 Password = "abc123".Md5String(),
                 UserType = "admin",
                 UserInfoId = 3,
                 IsAvailable = true,
                 CreateDate = DateTime.Now
             };
-            _provider.Insert(user);
+            var result = _service.Insert(user);
         }
 
         /// <summary>
@@ -72,14 +74,14 @@ namespace AlumniMis.Test.Provider
             var user = new User
             {
                 Id = 5,
-                UserName = "测试",
+                UserName = "service测试",
                 Password = "abc123".Md5String(),
                 UserType = "admin",
                 UserInfoId = 3,
                 IsAvailable = true,
                 CreateDate = DateTime.Now
             };
-            _provider.Update(user);
+            var result = _service.Update(user);
         }
     }
 }
