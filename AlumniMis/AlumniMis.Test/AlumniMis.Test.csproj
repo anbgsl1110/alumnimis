@@ -69,6 +69,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AlumniMis.Common\AlumniMis.Common.csproj">
+      <Project>{0EDD8367-C03A-4D55-934B-CA94531AF92F}</Project>
+      <Name>AlumniMis.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AlumniMis.Data\AlumniMis.Data.csproj">
       <Project>{F9924C86-87DF-49D6-96EA-CAAE1C8B7998}</Project>
       <Name>AlumniMis.Data</Name>

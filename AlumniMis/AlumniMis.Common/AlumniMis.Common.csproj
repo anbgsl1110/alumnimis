@@ -40,12 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\ErrorTypeEnum.cs" />
+    <Compile Include="Enum\ServiceStateEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ConfigHelper.cs" />
     <Compile Include="Util\Constant.cs" />
+    <Compile Include="Util\ObjectHelper.cs" />
     <Compile Include="Util\StringExtension.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

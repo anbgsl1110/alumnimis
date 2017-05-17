@@ -27,10 +27,28 @@ namespace AlumniMis.Data.DataBase
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); //移除复数表名
 
             //User
-            modelBuilder.Entity<User>().HasKey(p => p.Id);
-            modelBuilder.Entity<User>().Property(p => p.UserName).HasMaxLength(50);
-            modelBuilder.Entity<User>().Property(p => p.Password).HasMaxLength(50);
+            modelBuilder.Entity<User>().MapToStoredProcedures();
 
+            //Activity
+            modelBuilder.Entity<Activity>().MapToStoredProcedures();
+
+            //AdminInfo
+            modelBuilder.Entity<AdminInfo>().MapToStoredProcedures();
+
+            //AlumniInfo
+            modelBuilder.Entity<AlumniInfo>().MapToStoredProcedures();
+
+            //AlumniOrgan
+            modelBuilder.Entity<AlumniOrgan>().MapToStoredProcedures();
+
+            //Donate
+            modelBuilder.Entity<Donate>().MapToStoredProcedures();
+
+            //NewRelease
+            modelBuilder.Entity<NewRelease>().MapToStoredProcedures();
+
+            //RequestService
+            modelBuilder.Entity<RequestService>().MapToStoredProcedures();
         }
 
         #region 组织结构属性
