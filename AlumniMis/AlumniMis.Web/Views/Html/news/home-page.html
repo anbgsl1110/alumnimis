@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>首页</title>
-    <link href="../../Content/css/layout.css" rel="stylesheet">
-    <link href="../../Content/css/style.css" rel="stylesheet">
-    <link href="../../Content/css/New-style.css" rel="stylesheet">
+    <link href="../../../Content/css/layout.css" rel="stylesheet">
+    <link href="../../../Content/css/style.css" rel="stylesheet">
+    <link href="../../../Content/css/New-style.css" rel="stylesheet">
 
      <style>
 
@@ -54,6 +54,7 @@
              background:#fff;
              padding:20px;
          }
+
          .login-in{
              float:right;
              height:32px;
@@ -63,7 +64,8 @@
              color:#fff;
              cursor:pointer;
          }
-         .login-win{
+         /*  登录注册的弹窗ＣＳＳ*/
+         .password-change,.login-win{
              position:fixed;
              left:35%;
              top:20%;
@@ -74,7 +76,7 @@
              border-radius:3px;
              background:#fff;
          }
-        .register-win h3, .login-win h3{
+         .password-change h3,.register-win h3, .login-win h3{
              width:100%;
              height:30px;
              line-height:30px;
@@ -82,7 +84,7 @@
              margin-bottom:20px;
 
          }
-        .register-win div, .login-win div{
+         .password-change div,.register-win div, .login-win div{
              margin-bottom:20px;
          }
          .submit{
@@ -170,7 +172,7 @@
         <div class="new-navbar">
             <div class="new-container clearfix">
                 <div class="new-navbar-header" style="display: block;">
-                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="../../Content/images/school-log.jpg" width="50" height="50"></a>
+                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="../../../Content/images/school-log.jpg" width="50" height="50"></a>
                 </div>
                 <div class="new-navbar-nav navbar-content">
                     <!-- 导航里面的一级导航 begin {-->
@@ -221,7 +223,7 @@
     </div>
    <!--登录窗口-->
     <div class="login-win" style="display:none;">
-        <i class="cancel"><img src="../../Content/images/icon_delete_1.png"/></i>
+        <i class="cancel"><img src="../../../Content/images/icon_delete_1.png"/></i>
         <h3>登录界面</h3>
         <form>
             <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>
@@ -233,7 +235,7 @@
     </div>
     <!--注册窗口-->
     <div class="register-win" style="display:none">
-        <i class="cancel"><img src="../../Content/images/icon_delete_1.png"/></i>
+        <i class="cancel"><img src="../../../Content/images/icon_delete_1.png"/></i>
         <h3>注册界面</h3>
         <form>
             <div><span class="detail-title1">输入姓名</span><input type="text" class="form-text-normal"></div>
@@ -246,17 +248,30 @@
             <div class="submit"><button >注册</button></div>
         </form>
     </div>
+    <!--修改密码窗口-->
+    <div class="password-change" style="display:none;">
+        <i class="cancel"><img src="../../../Content/images/icon_delete_1.png"/></i>
+        <h3>修改密码界面</h3>
+        <form>
+            <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>
+            <div><span class="detail-title1">旧密码</span><input type="text" class="form-text-normal"><a href="##">&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</a></div>
+            <div><span class="detail-title1">新密码</span><input type="text" class="form-text-normal"></div>
+            <div class="submit"><button >修改</button></div>
+        </form>
+    </div>
 
 
 </div>
-<script src="../../scripts/jquery.min.js">
+<script src="../../../Scripts/jquery-1.10.2.min.js">
 </script>
 <script>
+/*导航切换*/
 $(".new-navbar-nav-left>li>a").click(function(){
     $(".new-navbar-nav-left>li>a").removeClass("nav-current");
     $(this).addClass("nav-current");
     $(".second-menu").hide();
 });
+/*第二级子菜单打开*/
 $(".first-menu").click(function(){
     if($(".first-menu>a").hasClass("nav-current")){
     if($(".second-menu").is(":hidden")){
@@ -267,12 +282,30 @@ $(".first-menu").click(function(){
     }
     }
 });
+/*修改用户密码*/
+
+/*登录与注册页面的出现于转换*/
 $(".login-in").click(function(){
     $(".login-win").show();
 });
-$(".login-in .cancel").click(function(){
+$(".cancel").click(function() {
+    $(this).parent().hide();
+});
+$(".toReg").click(function() {
     $(".login-win").hide();
+    $(".register-win").show()
+
 })
+
+$(".toLogin").click(function() {
+    $(".login-win").show();
+    $(".register-win").hide()
+
+});
+/*修改密码界面的js*/
+$(".Drop-box-item").click(function() {
+    $("password-change").show();
+});
 </script>
 </body>
 </html>
