@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>校友邮箱</title>
-    <link href="../../Content/css/layout.css" rel="stylesheet">
-    <link href="../../Content/css/style.css" rel="stylesheet">
-    <link href="../../Content/css/New-style.css" rel="stylesheet">
+    <link href="../../../Content/css/layout.css" rel="stylesheet">
+    <link href="../../../Content/css/style.css" rel="stylesheet">
+    <link href="../../../Content/css/New-style.css" rel="stylesheet">
 
     <style>
         .mainbg{
@@ -47,7 +47,7 @@
          .main-right div{
              margin-bottom:20px;
          }
-        .submit{
+        .main-right .submit{
             width:100%;
             height:30px;
             line-height:30px;
@@ -59,6 +59,47 @@
             color:#fff;
             background:none;
             border:0 none;
+        }
+        .password-change,.login-win{
+            position:fixed;
+            left:35%;
+            top:20%;
+            width:400px;
+            padding:20px;
+            height:350px;
+            border:1px solid #afafaf;
+            border-radius:3px;
+            background:#fff;
+        }
+        .password-change h3{
+            width:100%;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            margin-bottom:20px;
+
+        }
+        .password-change div{
+            margin-bottom:20px;
+        }
+        .password-change .submit{
+            width:100%;
+            height:30px;
+            line-height:30px;
+            background:#00b4f5;
+            text-align: center;
+            margin-top:50px;
+        }
+        .password-change .submit button{
+            color:#fff;
+            background:none;
+            border:0 none;
+        }
+        .password-change .cancel{
+            position:absolute;
+            top:2px;
+            right:4px;
+            cursor:pointer;
         }
     </style>
 </head>
@@ -105,25 +146,42 @@
         </div>
          <div  class="email-detail">
             <div class="main-left">
-                <img src="../../Content/images/big-logo.jpg"/>
+                <img src="../../../Content/images/big-logo.jpg"/>
             </div>
              <div class="main-right">
                  <h3>邮箱登录界面</h3>
                  <form>
                      <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>
-                     <div><span class="detail-title1">密码</span><input type="text" class="form-text-normal"><a href="##">&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</a></div>
+                     <div><span class="detail-title1">密码</span><input type="text" class="form-text-normal"><a href="##" class="forget-password">&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</a></div>
                      <div style="margin-left:30px;"><input type="checkbox" checked><span class="">记住用户名？</span></div>
                      <div class="submit"><button >登录</button></div>
                  </form>
              </div>
          </div>
     </div>
+    <!--修改密码界面-->
+    <div class="password-change" style="display:none;">
+    <i class="cancel"><img src="../../../Content/images/icon_delete_1.png"/></i>
+    <h3>修改密码界面</h3>
+    <form>
+        <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>
+        <div><span class="detail-title1">旧密码</span><input type="text" class="form-text-normal"></div>
+        <div><span class="detail-title1">新密码</span><input type="text" class="form-text-normal"></div>
+        <div class="submit"><button >修改</button></div>
+    </form>
+</div>
 </div>
 
-<script src="../../scripts/jquery.min.js">
+<script src="../../../Scripts/jquery-1.10.2.min.js">
 </script>
 <script>
-
+    /*修改密码界面的js*/
+    $(".forget-password").click(function() {
+        $(".password-change").show();
+    });
+    $(".cancel").click(function() {
+        $(this).parent().hide();
+    });
 </script>
 </body>
 </html>

@@ -241,6 +241,9 @@
                     '<em class="delete-icon">✖</em>' +
                     ' </li>');
                 $(".new-detail-style").prepend($htm);
+                $(".delete-icon").on("click", function() {
+                    $(this).parent().remove();
+                })
 
             }
         }

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>发起话题</title>
-    <link href="../../Content/css/layout.css" rel="stylesheet">
-    <link href="../../Content/css/style.css" rel="stylesheet">
-    <link href="../../Content/css/New-style.css" rel="stylesheet">
+    <link href="../../../Content/css/layout.css" rel="stylesheet">
+    <link href="../../../Content/css/style.css" rel="stylesheet">
+    <link href="../../../Content/css/New-style.css" rel="stylesheet">
 
     <style>
         .new-container{
@@ -90,6 +90,7 @@
                                 <em class="delete-icon">✖</em>
                             </li>
                             <li>
+                                <div class="input-tag" style="display:none;"><span class="detail-title1">请输入标签名</span><input type="text" id="tag" class="form-text-normal"/></div>
                                 <button type="button" class="btn-add-s1" title="添加"></button>
                             </li>
                         </ul>
@@ -108,10 +109,44 @@
         </div>
     </div>
 </div>
-<script src="../../scripts/jquery.min.js">
+<script src="../../../Scripts/jquery-1.10.2.min.js">
 </script>
 <script>
+    /* 添加新标签和删除标签*/
+    $(".delete-icon").click(function() {
+        $(this).parent().remove();
+    })
+    $(".btn-add-s1").click(function() {
+        $(this).hide();
+        $(".input-tag").show().attr("value",'');
 
+    });
+    /* "创建新标签"*/
+    $(".form-text-normal").keypress(function(){
+        if (event.keyCode == 13) {
+
+            var $text = $("#tag").val();
+            $(".btn-add-s1").show();
+            $(".input-tag").hide();
+            if ($text == "") {
+
+
+            } else {
+                var $htm = $(' <li class="new-detail-item">' +
+                    '<span class="option-city-item">' +
+                    $text +
+                    '</span>' +
+                    '<em class="delete-icon">✖</em>' +
+                    ' </li>');
+                $(".new-detail-style").prepend($htm);
+                $(".delete-icon").on("click", function() {
+                    $(this).parent().remove();
+                })
+
+            }
+        }
+
+    });
 </script>
 </body>
 </html>

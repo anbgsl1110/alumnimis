@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>捐赠列表详情</title>
-    <link href="../../Content/css/layout.css" rel="stylesheet">
-    <link href="../../Content/css/style.css" rel="stylesheet">
-    <link href="../../Content/css/New-style.css" rel="stylesheet">
+    <link href="../../../Content/css/layout.css" rel="stylesheet">
+    <link href="../../../Content/css/style.css" rel="stylesheet">
+    <link href="../../../Content/css/New-style.css" rel="stylesheet">
 
     <style>
         .now-location{
@@ -115,6 +115,7 @@
             position:absolute;
             top:2px;
             right:4px;
+            cursor: pointer;
         }
         .new-win input{
             border:1px solid #ccc;
@@ -184,7 +185,7 @@
             您的位置：<a href="donate-list.html" class="user-address">校友捐赠</a> <em>&#62</em> 捐赠详情
         </div>
         <div class="add">
-            <img src="../../Content/images/btn_teacher_add.png" width="20" height="20"/><span>我要捐赠</span>
+            <img src="../../../Content/images/btn_teacher_add.png" width="20" height="20"/><span>我要捐赠</span>
         </div>
         <div class="datal-news">
             <h3> 为母校建一座实验大楼</h3>
@@ -203,18 +204,23 @@
         </dl>
 
     </div>
-    <div class="new-win">
-        <i class="cancel"><img src="../../Content/images/icon_delete_1.png"/></i>
-        <p>我要捐赠</p>
+    <div class="new-win" style="display:none;">
+        <i class="cancel"><img src="../../../Content/images/icon_delete_1.png"/></i>
+        <b>我要捐赠</b>
         <p>母校支付宝账号：XXXXXXXXXXXXX</p>
         <p>母校银行卡号：XXXXXXXXXXXXXXXXXXXXX</p>
         <p>感谢校友的支持！</p>
     </div>
 </div>
-<script src="../../scripts/jquery.min.js">
+<script src="../../../Scripts/jquery-1.10.2.min.js">
 </script>
 <script>
-
+    $(".add").click(function() {
+        $(".new-win").show();
+    });
+    $(".cancel").click(function() {
+        $(this).parent().hide();
+    })
 </script>
 </body>
 </html>
