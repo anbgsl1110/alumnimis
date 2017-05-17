@@ -142,6 +142,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -270,7 +271,7 @@
     <Content Include="Content\images\toptriangle.png" />
     <Content Include="Content\images\triangle-block.png" />
     <Content Include="Content\images\triangle.jpg" />
-    <Content Include="Content\images\weixin-weibo.jpg" />
+    <Content Include="Content\New-style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -313,6 +314,8 @@
     <Content Include="Views\Html\service\service-Almuin.html" />
     <Content Include="Views\Html\service\service-email.html" />
     <Content Include="Views\Html\service\weixim-weibo.html" />
+    <Content Include="Views\News\HomePage.cshtml" />
+    <Content Include="Views\News\NewsDetail.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -346,6 +349,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlumniMis.Common\AlumniMis.Common.csproj">
+      <Project>{0edd8367-c03a-4d55-934b-ca94531af92f}</Project>
+      <Name>AlumniMis.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlumniMis.Data\AlumniMis.Data.csproj">
+      <Project>{F9924C86-87DF-49D6-96EA-CAAE1C8B7998}</Project>
+      <Name>AlumniMis.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlumniMis.Services\AlumniMis.Services.csproj">
+      <Project>{39FC5944-57BE-45AA-BFDB-21557308D8F4}</Project>
+      <Name>AlumniMis.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

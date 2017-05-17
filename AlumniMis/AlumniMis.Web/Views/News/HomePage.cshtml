@@ -1,0 +1,83 @@
+﻿@using AlumniMis.Data.DataTable
+
+@{
+    List<NewRelease> schoolNews = ViewBag.SchoolNews as List<NewRelease>;
+    List<NewRelease> alumniNews = ViewBag.AlumniNews as List<NewRelease>;
+    ViewBag.Title = "首页";
+}
+
+<style>
+    .news-alnumi h3, .news-school h3{
+        padding:10px;
+
+    }
+    .news-list{
+        height:193px;
+        margin:10px;
+        border:1px solid #ccc;
+    }
+    .new-detail{
+        width:100%;
+        height:24px;
+        border-bottom:1px dashed  #ccc;
+        line-height:24px;
+        padding:0 5px;
+        cursor:pointer;
+    }
+    .new-detail div{
+        float:left;
+
+    }
+    .new-detail  .news-tit{
+        width:60%;
+        text-align:center;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+    }
+    .new-detail .news-aut{
+        width:25%;
+        text-align:center;
+    }
+    .new-detail .news-time{
+        float:right;
+        width:15%;
+        text-align:center;
+    }
+</style>
+
+<div class="news-school">
+     <h3>母校新闻</h3>
+    <div class="news-list">
+        <div class="new-detail">
+            <div class="news-tit">新闻标题</div><div class="news-aut">作者</div><div class="news-time">发布时间</div>
+        </div>
+        @if(schoolNews != null && schoolNews.Count > 0)
+        {
+            foreach (var schoolNew in schoolNews)
+            {
+                <div class="new-detail" onclick="window.location.href= '/News/NewsDetail';return false">
+                    <div class="news-tit">@schoolNew.Ntit</div><div class="news-aut">@schoolNew.Nauthor</div><div class="news-time">@schoolNew.Ntime.ToShortDateString()</div>
+                </div>
+            }
+        }
+    </div>
+</div>
+<div class="news-alnumi">
+    <h3>校友新闻</h3>
+    <div class="news-list">
+        <div class="new-detail">
+            <div class="news-tit">新闻标题</div><div class="news-aut">作者</div><div class="news-time">发布时间</div>
+        </div>
+        @if(alumniNews != null && alumniNews.Count > 0)
+        {
+            foreach (var alumniNew in alumniNews)
+            {
+                <div class="new-detail" onclick="window.location.href= '/News/NewsDetail';return false">
+                    <div class="news-tit">@alumniNew.Ntit</div><div class="news-aut">@alumniNew.Nauthor</div><div class="news-time">@alumniNew.Ntime.ToShortDateString()</div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
