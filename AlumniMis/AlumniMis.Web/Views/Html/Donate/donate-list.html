@@ -38,6 +38,14 @@
             line-height:24px;
             padding:0 5px;
             cursor:pointer;
+            position: relative;
+        }
+        .donate-detail .delete-item {
+            position: absolute;
+            right: 2px;
+            top: -1px;
+            cursor: pointer;
+            z-index: 9999;
         }
         .donate-detail div{
             float:left;
@@ -122,15 +130,23 @@
             <div class="donate-detail" onclick="window.location.href= 'donate-detail.html';return false">
                 <div class="donate-tit">为母校建设一座实验室</div><div class="donate-aut">校友捐赠组织</div><div class="donate-pop">9</div>
                 <div class="donate-time">2017-5-12</div>
+                <!--只有管理员才能看到这个删除按钮，删除这条信息-->
+                <div class="delete-item"><img src="../../../Content/images/icon_delete_1.png"/></div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="../../scripts/jquery.min.js">
+<script src="../../../Scripts/jquery-1.10.2.min.js">
 </script>
 <script>
+    /*删除这条信息*/
+    $(".delete-item").bind("click",
+        function(event) {
+            event.stopPropagation();
+            $(this).parent().remove();
 
+        });
 </script>
 </body>
 </html>

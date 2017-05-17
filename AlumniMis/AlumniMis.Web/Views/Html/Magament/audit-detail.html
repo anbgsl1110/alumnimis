@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>审核详情页</title>
+    <link href="../../../Content/css/layout.css" rel="stylesheet">
+    <link href="../../../Content/css/style.css" rel="stylesheet">
+    <link href="../../../Content/css/New-style.css" rel="stylesheet">
+
+    <style>
+        .now-location{
+            margin-bottom:20px;
+        }
+        .datal-news h3{
+            width:100%;
+            text-align:center;
+            line-height:30px;
+            font-size:20px;
+        }
+        .detail{
+            height:24px;
+            line-height:24px;
+            text-align:right;
+        }
+        .datal-news p{
+            line-height:24px;
+            font-size:14px;
+        }
+        .datal-news img{
+            width:100%;
+            max-width:100%;
+            max-height:100%;
+        }
+        .mainbg{
+            background:#fff;
+            padding:30px;
+        }
+        .content_tit{
+            height:58px;
+            line-height:58px;
+            font-size:14px;
+        }
+        .content_comment textarea{
+            display:block;
+            width:808px;
+            height:95px;
+            line-height:20px;
+            font-size:13px;
+            padding:5px;
+            border:#999 1px solid;
+            overflow-y:auto;
+            resize:none;/*非IE设置是否能够拉伸*/
+        }
+        .content_comment .loginReg_login{
+            border:0 none;
+            margin-top:10px;
+            width:40px;
+            height:24px;
+            border-radius:3px;
+            line-height:24px;
+            background:#00b4f5;
+        }
+        .content_tit_comment{
+            line-height:68px;
+            overflow:hidden;
+            border-bottom:#d2dada 1px dashed;
+        }
+        .content_talk{
+            padding:19px 0 10px 0;
+        }
+        .content_talk dt{
+            height:30px;
+            color:#797979;
+        }
+        .content_talk dt span{
+            color:#9179a7;
+            margin:0 4px;
+        }
+        .content_talk dd{
+            line-height:17px;
+            text-decoration:underline;
+            color:#515050;
+            padding-left:10px;
+            border-left:#d5d5d5 2px solid;
+            margin-left:34px;
+        }
+
+        }
+    </style>
+</head>
+<body class="body-bgColor">
+<div class="body-layout">
+    <!-- 顶部导航与logo begin {-->
+    <div class="new-navbar-box new-navbar-fixed-top">
+        <div class="new-navbar-top" style="display: block;">
+            <div class="new-navbar-top-content">
+                <h3 class="new-navbar-top-title">校友信息管理系统</h3>
+                <div class="new-navbar-userID">
+                    欢迎校友<span class="new-navbar-userName">周树琴</span><em class="Drop-icon"></em>
+                    <div class="Drop-box">
+                        <span class="Drop-box-item">修改密码</span>
+                        <span class="Drop-box-item">注销</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-navbar">
+            <div class="new-container clearfix">
+                <div class="new-navbar-header" style="display: block;">
+                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="../../Content/images/school-log.jpg" width="50" height="50"></a>
+                </div>
+                <div class="new-navbar-nav navbar-content">
+                    <!-- 导航里面的一级导航 begin {-->
+                    <ul class="new-navbar-nav-left clearfix">
+                        <li class="new-navbar-nav-item"><a href="#">首页</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友组织</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友天地</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友服务</a></li>
+                        <li class="new-navbar-nav-item"><a href="#"  class="nav-current">校友捐赠</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">联系我们</a></li>
+                    </ul>
+                    <!--} 导航里面的一级导航 end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--} 顶部导航与logo end -->
+    <div class="new-container mainbg">
+        <div class="">
+            您的位置：<a href="things-list.html" class="user-address">待审核事项</a> <em>&#62</em> 审核详情
+        </div>
+
+        <div class="datal-news">
+            <h3> 为母校建一座实验大楼</h3>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;
+                母校实验大楼设备落后 要为母校建一座实验大楼母校实验大楼设备落后 要为母校建一座实验大楼母校实验大楼设备落后 要为母校建一座实验大楼
+                母校实验大楼设备落后 要为母校建一座实验大楼母校实验大楼设备落后 要为母校建一座实验大楼母校实验大楼设备落后 要为母校建一座实验大楼
+
+            </p>
+            <img/>
+        </div>
+
+        <h3 class="content_tit content_tit_comment">审核处理</h3>
+        <div class="inteset-org">
+            <div class="new-section">
+                <div class="detail-head">审核详情</div>
+                <div class="detail-middle5">
+                    <div class="clearfix">
+                        <ul class="user-box-ul clearfix">
+                            <li class="clearfix">
+                                <span class="detail-title1">审核人</span>
+                                <input type="text" class="form-text-normal">
+                            </li>
+                            <li class="clearfix">
+                                <span class="detail-title1">审核时间</span>
+                                <input type="text" class="form-text-normal">
+                            </li>
+                            <li class="clearfix">
+                                <span class="detail-title1">联系方式</span>
+                                <input type="text" class="form-text-normal">
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="clearfix">
+                        <span class="detail-title1">审核意见</span>
+                        <textarea class="form-text-area-s2" style="width:889px;"></textarea>
+                    </div>
+                </div>
+                <div class="new-detail-bottom clearfix">
+                    <button type="button" class="btn-default btn-sure">同意</button>
+                    <button type="button" class="btn-default btn-cancel">拒接</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../../Scripts/jquery-1.10.2.min.js">
+</script>
+<script>
+</script>
+</body>
+</html>
