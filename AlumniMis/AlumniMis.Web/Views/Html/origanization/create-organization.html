@@ -179,7 +179,7 @@
                                 </li>
                                 <li>
                                     <button type="button" class="btn-add-s1" title="添加"></button>
-                                    <div class="input-tag" style="display:none;"><span class="detail-title1">请输入标签名</span><input type="text" class="form-text-normal"></div>
+                                    <div class="input-tag" style="display:none;"><span class="detail-title1">请输入标签名</span><input type="text" id="tag" class="form-text-normal"/></div>
                                 </li>
                             </ul>
                         </div>
@@ -220,22 +220,23 @@
     })
     $(".btn-add-s1").click(function() {
         $(this).hide();
-        $(".input-tag").show();
+        $(".input-tag").show().attr("value",'');
+
     });
-  /* "创建新标签"，未完成，不太会*/
+  /* "创建新标签"*/
     $(".form-text-normal").keypress(function(){
         if (event.keyCode == 13) {
-            alert(1);
-            var $text = $(".form-text-normal").val();
-            alert($text);
+
+            var $text = $("#tag").val();
             $(".btn-add-s1").show();
             $(".input-tag").hide();
             if ($text == "") {
 
+
             } else {
                 var $htm = $(' <li class="new-detail-item">' +
                     '<span class="option-city-item">' +
-                    'aa' +
+                    $text +
                     '</span>' +
                     '<em class="delete-icon">✖</em>' +
                     ' </li>');
