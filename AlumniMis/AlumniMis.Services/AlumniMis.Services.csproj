@@ -40,9 +40,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceResult.cs" />
+    <Compile Include="Service\IService\IActivityService.cs" />
+    <Compile Include="Service\IService\IAdminInfoService.cs" />
+    <Compile Include="Service\IService\IAluminiInfoService.cs" />
+    <Compile Include="Service\IService\IAlumniOrganService.cs" />
+    <Compile Include="Service\IService\IBaseService.cs" />
+    <Compile Include="Service\IService\IDonateService.cs" />
+    <Compile Include="Service\IService\INewReleaseService.cs" />
+    <Compile Include="Service\IService\IRequestServiceService.cs" />
+    <Compile Include="Service\IService\IUserService.cs" />
+    <Compile Include="Service\Service\ActivityService.cs" />
+    <Compile Include="Service\Service\AdmininfoService.cs" />
+    <Compile Include="Service\Service\AluminiInfoService.cs" />
+    <Compile Include="Service\Service\AluminiOrganService.cs" />
+    <Compile Include="Service\Service\BaseService.cs" />
+    <Compile Include="Service\Service\DonateService.cs" />
+    <Compile Include="Service\Service\NewReleaseService.cs" />
+    <Compile Include="Service\Service\RequestServiceService.cs" />
+    <Compile Include="Service\Service\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Service\Service" />
+    <Folder Include="Model" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlumniMis.Common\AlumniMis.Common.csproj">
+      <Project>{0EDD8367-C03A-4D55-934B-CA94531AF92F}</Project>
+      <Name>AlumniMis.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlumniMis.Data\AlumniMis.Data.csproj">
+      <Project>{F9924C86-87DF-49D6-96EA-CAAE1C8B7998}</Project>
+      <Name>AlumniMis.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

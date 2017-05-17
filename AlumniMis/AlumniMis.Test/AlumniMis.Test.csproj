@@ -67,6 +67,7 @@
     <Compile Include="DataBase\DbInitializerTest.cs" />
     <Compile Include="Provider\UserProviderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\UserServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlumniMis.Common\AlumniMis.Common.csproj">
@@ -76,6 +77,10 @@
     <ProjectReference Include="..\AlumniMis.Data\AlumniMis.Data.csproj">
       <Project>{F9924C86-87DF-49D6-96EA-CAAE1C8B7998}</Project>
       <Name>AlumniMis.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlumniMis.Services\AlumniMis.Services.csproj">
+      <Project>{39FC5944-57BE-45AA-BFDB-21557308D8F4}</Project>
+      <Name>AlumniMis.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

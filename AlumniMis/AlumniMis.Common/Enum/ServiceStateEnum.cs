@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Oem.Data.Enum
+namespace AlumniMis.Common.Enum
 {
     /// <summary>
     /// 服务请求状态枚举
