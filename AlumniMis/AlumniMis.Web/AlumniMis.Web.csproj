@@ -310,6 +310,9 @@
     <Content Include="Views\Origanization\OriganizationDetail.cshtml" />
     <Content Include="Views\Origanization\OriganizationList.cshtml" />
     <Content Include="Views\Service\CardService.cshtml" />
+    <Content Include="Views\Service\EmailService.cshtml" />
+    <Content Include="Views\Service\SchoolServiceRequest.cshtml" />
+    <Content Include="Views\Service\WeChatWeBlog.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

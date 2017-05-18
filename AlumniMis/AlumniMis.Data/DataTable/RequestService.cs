@@ -1,4 +1,6 @@
-﻿namespace AlumniMis.Data.DataTable
+﻿using System;
+
+namespace AlumniMis.Data.DataTable
 {
     /// <summary>
     /// 校友服务
@@ -29,6 +31,21 @@
         /// 负责人电话号码
         /// </summary>
         public string Stel { get; set; }
+
+        /// <summary>
+        /// 申请服务时间
+        /// </summary>
+        public DateTime SserviceDate { get; set; }
+
+        /// <summary>
+        /// 服务申请创建时间
+        /// </summary>
+        public DateTime ScreateTime { get; set; }
+
+        /// <summary>o
+        /// 申请事由
+        /// </summary>
+        public string Sreason { get; set; }
 
         /// <summary>
         /// 请求状态

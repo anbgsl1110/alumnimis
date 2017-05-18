@@ -29,10 +29,6 @@
             <div class="clearfix">
                 <div class="detail-title1">新闻标签</div>
                 <ul class="new-detail-style">
-                    <li class="new-detail-item"><!-- 有权限删除的时候li上增加样式 could-delete，鼠标经过就会显示删除按钮 -->
-                        <span class="option-city-item">系统实施</span>
-                        <em class="delete-icon">✖</em>
-                    </li>
                     <li>
                         <div class="input-tag" style="display:none;"><span class="detail-title1">请输入标签名</span><input type="text" id="tag" class="form-text-normal"/></div>
                         <button type="button" class="btn-add-s1" title="添加"></button>
@@ -52,6 +48,40 @@
 </div>
 
 <script type="text/javascript">
+    /* 添加新标签和删除标签*/
+    $(".delete-icon").click(function() {
+        $(this).parent().remove();
+    });
+    $(".btn-add-s1").click(function() {
+        $(this).hide();
+        $(".input-tag").show().attr("value",'');
+
+    });
+    /* "创建新标签"*/
+    $(".form-text-normal").keypress(function(){
+        if (event.keyCode == 13) {
+
+            var $text = $("#tag").val();
+            $(".btn-add-s1").show();
+            $(".input-tag").hide();
+            if ($text == "") {
+
+            } else {
+                var $htm = $(' <li class="new-detail-item">' +
+                    '<span class="option-city-item">' +
+                    $text +
+                    '</span>' +
+                    '<em class="delete-icon">✖</em>' +
+                    ' </li>');
+                $(".new-detail-style").prepend($htm);
+                $(".delete-icon").on("click",
+                    function() {
+                        $(this).parent().remove();
+                    });
+            }
+        }
+    });
+    /*发布新闻*/
     $('#newsPub_Release').click(function() {
         var newRelease = {
             Ntit : $('#newsPub_Ntit').val(),

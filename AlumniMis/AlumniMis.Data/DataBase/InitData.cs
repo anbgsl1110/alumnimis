@@ -94,6 +94,9 @@ namespace AlumniMis.Data.DataBase
                     Sname = "服务"+ i,
                     Sres = "负责人",
                     Stel = "18294567867",
+                    SserviceDate = DateTime.Now,
+                    ScreateTime = DateTime.Now,
+                    Sreason = "申请事由",
                     Status = false
                 });
             }
