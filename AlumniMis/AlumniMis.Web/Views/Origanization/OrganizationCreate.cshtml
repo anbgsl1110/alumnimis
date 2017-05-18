@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "title";
+}
+
+<div class="tooltip-bar clearfix">
+    <div class="tooltip-bar-address">
+        您的位置：<a href="/Origanization/OriganizationList" class="user-address">校友组织</a> <em>&#62</em> 新建校友组织
+    </div>
+</div>
+<form>
+    <label>请选择创建组织的类型：</label>
+    <select class="sel-org">
+        <option selected="selected">班级组织</option>
+        <option>地区组织</option>
+        <option>兴趣组织</option>
+    </select>
+</form>
+<ul class="cate-org">
+    <li class="class-org">
+        <div class="new-section">
+            <div class="detail-head">新建班级</div>
+            <div class="detail-middle5">
+                <div class="clearfix">
+                    <ul class="user-box-ul clearfix">
+                        <li class="clearfix">
+                            <span class="detail-title1">班级编号</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">班级名称</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">入学年份</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">所在院系</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">所修专业</span>
+                            <input type="text" class="form-text-normal">
+
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="clearfix">
+                    <span class="detail-title1">创建理由</span>
+                    <textarea class="form-text-area-s2" style="width:889px;"></textarea>
+                </div>
+
+            </div>
+            <div class="new-detail-bottom clearfix">
+                <button type="button" class="btn-default btn-sure">确定</button>
+                <button type="button" class="btn-default btn-cancel">取消</button>
+            </div>
+        </div>
+    </li>
+    <li class="location-org" style="display:none">
+        <div class="new-section">
+            <div class="detail-head">新建地区校友组织</div>
+            <div class="detail-middle5">
+                <div class="clearfix">
+                    <ul class="user-box-ul clearfix">
+                        <li class="clearfix">
+                            <span class="detail-title1">所在地区</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">组织名称</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">创建人</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">联系方式</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="clearfix">
+                    <span class="detail-title1">创建理由</span>
+                    <textarea class="form-text-area-s2" style="width:889px;"></textarea>
+                </div>
+
+            </div>
+            <div class="new-detail-bottom clearfix">
+                <button type="button" class="btn-default btn-sure">确定</button>
+                <button type="button" class="btn-default btn-cancel">取消</button>
+            </div>
+        </div>
+    </li>
+    <li class="inteset-org" style="display:none">
+        <div class="new-section">
+            <div class="detail-head">新建兴趣组织</div>
+            <div class="detail-middle5">
+                <div class="clearfix">
+                    <ul class="user-box-ul clearfix">
+                        <li class="clearfix">
+                            <span class="detail-title1">组织名称</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">创建人</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+                        <li class="clearfix">
+                            <span class="detail-title1">联系方式</span>
+                            <input type="text" class="form-text-normal">
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="clearfix">
+                    <div class="detail-title1">标签</div>
+                    <ul class="new-detail-style">
+                        <li class="new-detail-item">
+                            <span class="option-city-item">动漫</span>
+                            <em class="delete-icon">✖</em>
+                        </li>
+                        <li>
+                            <button type="button" class="btn-add-s1" title="添加"></button>
+                            <div class="input-tag" style="display:none;"><span class="detail-title1">请输入标签名</span><input type="text" id="tag" class="form-text-normal"/></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix">
+                    <span class="detail-title1">创建理由</span>
+                    <textarea class="form-text-area-s2" style="width:889px;"></textarea>
+                </div>
+
+            </div>
+            <div class="new-detail-bottom clearfix">
+                <button type="button" class="btn-default btn-sure">确定</button>
+                <button type="button" class="btn-default btn-cancel">取消</button>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<script type="text/javascript">
+    $(function($) {
+        $("#alumni_navbar2").addClass("nav-current");
+        $(".second-menu").hide();
+    });
+</script>
+
+<script>
+    /*选择创建组织类型出现什么样的组织界面*/
+    $(".sel-org").change(function() {
+        if ($(this).val() == "班级组织") {
+            $(".class-org").show().siblings().hide();
+        }
+        if ($(this).val() == "地区组织") {
+            $(".location-org").show().siblings().hide();
+        }
+        if ($(this).val() == "兴趣组织") {
+            $(".inteset-org").show().siblings().hide();
+        }
+    });
+
+    /* 添加新标签和删除标签*/
+    $(".delete-icon").click(function() {
+        $(this).parent().remove();
+    })
+    $(".btn-add-s1").click(function() {
+        $(this).hide();
+        $(".input-tag").show().attr("value",'');
+
+    });
+    /* "创建新标签"*/
+    $(".form-text-normal").keypress(function(){
+        if (event.keyCode == 13) {
+
+            var $text = $("#tag").val();
+            $(".btn-add-s1").show();
+            $(".input-tag").hide();
+            if ($text == "") {
+
+
+            } else {
+                var $htm = $(' <li class="new-detail-item">' +
+                    '<span class="option-city-item">' +
+                    $text +
+                    '</span>' +
+                    '<em class="delete-icon">✖</em>' +
+                    ' </li>');
+                $(".new-detail-style").prepend($htm);
+                $(".delete-icon").on("click", function() {
+                    $(this).parent().remove();
+                })
+
+            }
+        }
+
+    });
+</script>

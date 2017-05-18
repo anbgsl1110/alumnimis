@@ -8,7 +8,7 @@ namespace AlumniMis.Services.Service.Service
     /// <summary>
     /// 校友组织服务
     /// </summary>
-    public class AluminiOrganService : BaseService,IAlumniOrganService
+    public class AlumniOrganService : BaseService,IAlumniOrganService
     {
         public ServiceResult<ServiceStateEnum, T> Select<T>(T t, long id)
         {

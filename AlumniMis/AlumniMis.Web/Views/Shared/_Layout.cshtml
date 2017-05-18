@@ -135,15 +135,15 @@
         <div class="new-navbar">
             <div class="new-container clearfix">
                 <div class="new-navbar-header" style="display: block;">
-                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="../../Content/images/school-log.jpg" width="50" height="50"></a>
+                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="~/Content/images/school-log.jpg" width="50" height="50"></a>
                 </div>
                 <div class="new-navbar-nav navbar-content">
                     <!-- 导航里面的一级导航 begin {-->
                     <ul class="new-navbar-nav-left clearfix">
-                        <li class="new-navbar-nav-item"><a href="#" class="nav-current">首页</a></li>
-                        <li class="new-navbar-nav-item"><a href="#">校友组织</a></li>
-                        <li class="new-navbar-nav-item"><a href="#">校友天地</a></li>
-                        <li class="new-navbar-nav-item first-menu"><a href="#">校友服务</a>
+                        <li class="new-navbar-nav-item"><a href="/News/HomePage" id="alumni_navbar1">首页</a></li>
+                        <li class="new-navbar-nav-item"><a href="/Origanization/OriganizationList" id="alumni_navbar2">校友组织</a></li>
+                        <li class="new-navbar-nav-item"><a href="#" id="alumni_navbar3">校友天地</a></li>
+                        <li class="new-navbar-nav-item first-menu"  id="alumni_navbar4"><a href="#">校友服务</a>
                             <ul class="second-menu" style="display:none">
                                 <li><a href="#">校友卡服务</a></li>
                                 <li><a href="#">校友接待</a></li>
@@ -151,8 +151,8 @@
                                 <li><a href="#">母校校友服务组织</a></li>
                             </ul>
                         </li>
-                        <li class="new-navbar-nav-item"><a href="#">校友捐赠</a></li>
-                        <li class="new-navbar-nav-item"><a href="#">联系我们</a></li>
+                        <li class="new-navbar-nav-item"><a href="#"  id="alumni_navbar5">校友捐赠</a></li>
+                        <li class="new-navbar-nav-item"><a href="#"  id="alumni_navbar6">联系我们</a></li>
                     </ul>
                     <!--} 导航里面的一级导航 end -->
                 </div>
@@ -165,7 +165,7 @@
     </div>
     <!--登录窗口-->
     <div class="login-win" style="display:none;">
-        <i class="cancel"><img src="../../Content/images/icon_delete_1.png"/></i>
+        <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
         <h3>登录界面</h3>
         <form>
             <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>
@@ -177,7 +177,7 @@
     </div>
     <!--注册窗口-->
     <div class="register-win" style="display:none">
-        <i class="cancel"><img src="../../Content/images/icon_delete_1.png"/></i>
+        <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
         <h3>注册界面</h3>
         <form>
             <div><span class="detail-title1">输入姓名</span><input type="text" class="form-text-normal"></div>
@@ -192,7 +192,7 @@
     </div>
     <!--修改密码窗口-->
     <div class="password-change" style="display:none;">
-        <i class="cancel"><img src="../../Content/images/icon_delete_1.png"/></i>
+        <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
         <h3>修改密码界面</h3>
         <form>
             <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>

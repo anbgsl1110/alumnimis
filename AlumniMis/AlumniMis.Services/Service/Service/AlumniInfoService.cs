@@ -6,9 +6,9 @@ using Oem.Data.ServiceModel;
 namespace AlumniMis.Services.Service.Service
 {
     /// <summary>
-    /// 校友信息服务
+    /// 校友组织服务
     /// </summary>
-    public class AluminiInfoService : BaseService,IAluminiInfoService
+    public class AlumniInfoService : BaseService, IAlumniOrganService
     {
         public ServiceResult<ServiceStateEnum, T> Select<T>(T t, long id)
         {
@@ -44,7 +44,7 @@ namespace AlumniMis.Services.Service.Service
 
         public ServiceResult<ServiceStateEnum> Delete<T>(T t, long id)
         {
-            AlumniInfoProvider.Delete(t,id);
+            AlumniInfoProvider.Delete(t, id);
             return new ServiceResult<ServiceStateEnum>();
         }
 

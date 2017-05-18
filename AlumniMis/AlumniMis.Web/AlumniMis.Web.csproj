@@ -143,6 +143,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\OriganizationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -294,6 +295,10 @@
     <Content Include="Views\News\HomePage.cshtml" />
     <Content Include="Views\News\NewsDetail.cshtml" />
     <Content Include="Views\News\NewsPub.cshtml" />
+    <Content Include="Views\Origanization\ClassList.cshtml" />
+    <Content Include="Views\Origanization\OrganizationCreate.cshtml" />
+    <Content Include="Views\Origanization\OriganizationDetail.cshtml" />
+    <Content Include="Views\Origanization\OriganizationList.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

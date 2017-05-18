@@ -3,7 +3,7 @@
     /// <summary>
     /// 校友信息服务接口
     /// </summary>
-    public interface IAluminiInfoService : IBaseService
+    public interface IAlumniInfoService : IBaseService
     {
 
     }

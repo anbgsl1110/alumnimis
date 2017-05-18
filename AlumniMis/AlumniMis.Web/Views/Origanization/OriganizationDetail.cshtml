@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "title";
+}
+
+<style>
+    .newwin{
+        background:#fff;
+        padding:50px;
+    }
+    .detail-org  div{
+        width:100%;
+        line-height:24px;
+        margin-bottom:10px;
+        border-bottom:1px dashed #ccc;
+    }
+
+    .detail-org  div p{
+        line-height:24px;
+    }
+    .detail-org .marginBottom{
+        margin-bottom:0px;
+    }
+    .add{
+        width:100%;
+        height:20px;
+        line-height:24px;
+        text-align:right;
+        cursor:pointer;
+    }
+    .add span{
+        display:inline-block;
+        line-height:24px;
+
+    }
+    .add img{
+        margin-top:-2px;
+        margin-right:4px;
+    }
+
+    .new-win{
+        position:fixed;
+        width:360px;
+        padding:20px;
+        height:300px !important;
+        border:1px solid #ccc;
+        left:30%;
+        top:20%;
+        background:#fff;
+    }
+    .cancel{
+        position:absolute;
+        top:2px;
+        right:4px;
+        cursor: pointer;
+    }
+    .new-win input{
+        border:1px solid #ccc;
+        line-height:24px;
+    }
+    .sub{
+        border-radius:5px;
+        width:auto;
+        height:24px;
+        line-height:24px;
+        background:#00b4f5;
+        margin-left:260px;
+        text-align:center;
+        cursor:pointer;
+
+    }
+    .sub input{
+        background:none;
+        border: 0 none;
+        color:#fff;
+        cursor:pointer;
+    }
+    textarea{
+        height:100px;
+    }
+</style>
+
+<!--从其他组织分类进入组织详情页显示-->
+<div>您的位置：<a href="/Origanization/OriganizationList" class="user-address">校友组织</a> <em>&#62</em>组织详情</div>
+<!--从班级组织分类进入班级列表进如组织详情显示，两个只能显示一个-->
+<div style="display:none;">您的位置：<a href="/Origanization/OriganizationList" class="user-address" >校友组织</a> <em>&#62</em><a href="/Origanization/ClassList" class="user-address">班级列表</a><em>&#62</em> 班级详情</div>
+<div class="add">
+    <img src="~/Content/images/btn_teacher_add.png" width="20" height="20"/><span>加入组织</span>
+</div>
+<div class="detail-org">
+    <div><span>组织名称：</span><span>安徽校友组织</span></div>
+    <div><span>组织创建时间：</span><span>2017-5-2</span></div>
+    <div><span>组织创建人：</span><span>安徽2013级校友</span></div>
+    <div><span>组织负责人：</span><span>安徽2013级校友</span></div>
+    <div><span>负责人联系方式：</span><span>13500005000</span></div>
+    <div><span>组织成员： </span><span>113人</span></div>
+    <div class="marginBottom"><span>组织介绍：</span>
+        <p>
+            这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的
+            这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的这是13级安徽校友创建的
+        </p>
+    </div>
+</div>
+
+<div class="new-win" style="display:none;">
+    <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
+    <p>申请加入组织</p>
+    <p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:&nbsp; <input type="text" name="name" /></p>
+    <p>联系方式:&nbsp; <input type="text" name="tel" /></p>
+    申请原因：<textarea></textarea>
+    <div class="sub"> <input type="submit" value="提交申请" /></div>
+</div>
+
+<script type="text/javascript">
+    $(function($) {
+        $("#alumni_navbar2").addClass("nav-current");
+        $(".second-menu").hide();
+    });
+</script>
+
+<script type="text/javascript">
+    $(".add").click(function() {
+        $(".new-win").show();
+    });
+    $(".cancel").click(function() {
+        $(this).parent().hide();
+    });
+</script>
