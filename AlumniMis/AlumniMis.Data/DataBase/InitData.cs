@@ -83,7 +83,7 @@ namespace AlumniMis.Data.DataBase
                     Nauthor = "作者",
                     Ntime = DateTime.Now,
                     Ntag = "通知",
-                    Ntype = "校内新闻",
+                    Ntype = "母校新闻",
                     Ncontent = "怎么过一天，就怎么过一生"
                 });
                 dbContext.RequestServices.Add(new RequestService

@@ -141,6 +141,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,7 +177,6 @@
     <Content Include="Content\images\bg_tips7.png" />
     <Content Include="Content\images\bg_toolbar1.gif" />
     <Content Include="Content\images\bg_toolbar2.gif" />
-    <Content Include="Content\images\big-logo.jpg" />
     <Content Include="Content\images\btn-export.png" />
     <Content Include="Content\images\btn-export2.png" />
     <Content Include="Content\images\btn-send-out.png" />
@@ -265,7 +265,6 @@
     <Content Include="Content\images\pic_course.png" />
     <Content Include="Content\images\pic_course02.png" />
     <Content Include="Content\images\pic_head3.jpg" />
-    <Content Include="Content\images\school-log.jpg" />
     <Content Include="Content\images\sort.png" />
     <Content Include="Content\images\toptriangle.png" />
     <Content Include="Content\images\triangle-block.png" />
@@ -280,6 +279,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -293,6 +293,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Views\News\HomePage.cshtml" />
     <Content Include="Views\News\NewsDetail.cshtml" />
+    <Content Include="Views\News\NewsPub.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

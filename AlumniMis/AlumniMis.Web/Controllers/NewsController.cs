@@ -1,12 +1,13 @@
 ﻿
 using System.Linq;
 using System.Web.Mvc;
+using AlumniMis.Common.Enum;
 using AlumniMis.Data.DataTable;
 using AlumniMis.Services.Service.Service;
 
 namespace AlumniMis.Web.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : BaseController
     {
         /// <summary>
         /// 首页(新闻)
@@ -16,7 +17,7 @@ namespace AlumniMis.Web.Controllers
         {
             NewReleaseService service = new NewReleaseService();
             var newsListResult = service.Select(new NewRelease(),0,1000).Data.ToList();
-            var schoolNews = newsListResult.Where(p => p.Ntype.Equals("校内新闻")).Take(5).ToList();
+            var schoolNews = newsListResult.Where(p => p.Ntype.Equals("母校新闻")).Take(5).ToList();
             ViewBag.SchoolNews = schoolNews;
             var alumniNews = newsListResult.Where(p => p.Ntype.Equals("校友新闻")).Take(5).ToList();
             ViewBag.AlumniNews = alumniNews;
@@ -27,16 +28,44 @@ namespace AlumniMis.Web.Controllers
         /// 新闻详情
         /// </summary>
         /// <returns></returns>
-        public ActionResult NewsDetail(long id = 100)
+        public ActionResult NewsDetail(long id = 0)
         {
             NewReleaseService service = new NewReleaseService();
             var newsResult = service.Select(new NewRelease(), id).Data;
             if (newsResult == null)
             {
-                return Redirect("/Error");
+                return RedirectToAction("Error");
             }
             ViewBag.News = newsResult;
             return View();
+        }
+
+        /// <summary>
+        /// 新闻发布界面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult NewsPub(long id)
+        {
+            ViewBag.NewType = "母校新闻";
+            if (id == (int)NewsTypeEnum.AlumniNews)
+            {
+                ViewBag.NewType = "校友新闻";
+            }
+            return View();
+        }
+
+        /// <summary>
+        /// 创建新闻
+        /// </summary>
+        /// <param name="newRelease"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult CreateNews(NewRelease newRelease)
+        {
+            NewReleaseService service = new NewReleaseService();
+            var result = service.Insert(newRelease);
+
+            return Json(result);
         }
     }
 }
