@@ -142,8 +142,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DonateController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\OriganizationController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -292,6 +295,10 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Donate\DonateCreate.cshtml" />
+    <Content Include="Views\Donate\DonateDetail.cshtml" />
+    <Content Include="Views\Donate\DonateList.cshtml" />
     <Content Include="Views\News\HomePage.cshtml" />
     <Content Include="Views\News\NewsDetail.cshtml" />
     <Content Include="Views\News\NewsPub.cshtml" />
@@ -299,6 +306,7 @@
     <Content Include="Views\Origanization\OrganizationCreate.cshtml" />
     <Content Include="Views\Origanization\OriganizationDetail.cshtml" />
     <Content Include="Views\Origanization\OriganizationList.cshtml" />
+    <Content Include="Views\Service\CardService.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using AlumniMis.Common.Enum;
@@ -7,6 +8,9 @@ using AlumniMis.Services.Service.Service;
 
 namespace AlumniMis.Web.Controllers
 {
+    /// <summary>
+    /// 首页新闻控制器
+    /// </summary>
     public class NewsController : BaseController
     {
         /// <summary>
@@ -62,6 +66,8 @@ namespace AlumniMis.Web.Controllers
         [HttpPost]
         public JsonResult CreateNews(NewRelease newRelease)
         {
+            newRelease.Ntime = DateTime.Now;
+
             NewReleaseService service = new NewReleaseService();
             var result = service.Insert(newRelease);
 

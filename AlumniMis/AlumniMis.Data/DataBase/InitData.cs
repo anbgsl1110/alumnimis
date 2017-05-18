@@ -68,7 +68,9 @@ namespace AlumniMis.Data.DataBase
                 {
                     Dnum = "Donate" + numberTemp + i,
                     Dname = "捐赠" + i,
+                    Damount = 100002,
                     Dtag = "hhh",
+                    Dreason = "捐赠理由",
                     Dpub = DateTime.Now,
                     Dpuber = "发起人",
                     Dres = "负责人",

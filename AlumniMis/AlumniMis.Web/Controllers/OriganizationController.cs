@@ -4,7 +4,10 @@ using AlumniMis.Services.Service.Service;
 
 namespace AlumniMis.Web.Controllers
 {
-    public class OriganizationController : Controller
+    /// <summary>
+    /// 校友组织控制器
+    /// </summary>
+    public class OriganizationController : BaseController
     {
         /// <summary>
         /// 校友组织列表
@@ -40,7 +43,7 @@ namespace AlumniMis.Web.Controllers
         [HttpPost]
         public JsonResult CreateOrganization(AlumniOrgan alumniOrgan)
         {
-            NewReleaseService service = new NewReleaseService();
+            AlumniOrganService service = new AlumniOrganService();
             var result = service.Insert(alumniOrgan);
 
             return Json(result);
