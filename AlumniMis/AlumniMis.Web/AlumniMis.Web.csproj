@@ -141,7 +141,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -292,28 +291,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Views\Html\activity\act-detail.html" />
-    <Content Include="Views\Html\activity\act-topic.html" />
-    <Content Include="Views\Html\activity\create-act.html" />
-    <Content Include="Views\Html\activity\create-topic.html" />
-    <Content Include="Views\Html\activity\recruit-detail.html" />
-    <Content Include="Views\Html\activity\recruit.html" />
-    <Content Include="Views\Html\activity\topic-detail.html" />
-    <Content Include="Views\Html\contact\contact.html" />
-    <Content Include="Views\Html\Donate\create-donate.html" />
-    <Content Include="Views\Html\Donate\donate-detail.html" />
-    <Content Include="Views\Html\Donate\donate-list.html" />
-    <Content Include="Views\Html\hearder-mode.html" />
-    <Content Include="Views\Html\news\home-page.html" />
-    <Content Include="Views\Html\news\news-detail.html" />
-    <Content Include="Views\Html\origanization\class-list.html" />
-    <Content Include="Views\Html\origanization\create-organization.html" />
-    <Content Include="Views\Html\origanization\organization-detail.html" />
-    <Content Include="Views\Html\origanization\organization-list.html" />
-    <Content Include="Views\Html\service\card-service.html" />
-    <Content Include="Views\Html\service\service-Almuin.html" />
-    <Content Include="Views\Html\service\service-email.html" />
-    <Content Include="Views\Html\service\weixim-weibo.html" />
     <Content Include="Views\News\HomePage.cshtml" />
     <Content Include="Views\News\NewsDetail.cshtml" />
     <Content Include="Web.config" />
@@ -327,9 +304,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

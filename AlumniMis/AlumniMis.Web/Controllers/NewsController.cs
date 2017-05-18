@@ -27,7 +27,7 @@ namespace AlumniMis.Web.Controllers
         /// 新闻详情
         /// </summary>
         /// <returns></returns>
-        public ActionResult NewsDetail(long id = 3)
+        public ActionResult NewsDetail(long id = 100)
         {
             NewReleaseService service = new NewReleaseService();
             var newsResult = service.Select(new NewRelease(), id).Data;
