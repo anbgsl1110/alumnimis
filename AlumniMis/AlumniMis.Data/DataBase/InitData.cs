@@ -68,7 +68,9 @@ namespace AlumniMis.Data.DataBase
                 {
                     Dnum = "Donate" + numberTemp + i,
                     Dname = "捐赠" + i,
+                    Damount = 100002,
                     Dtag = "hhh",
+                    Dreason = "捐赠理由",
                     Dpub = DateTime.Now,
                     Dpuber = "发起人",
                     Dres = "负责人",
@@ -83,6 +85,7 @@ namespace AlumniMis.Data.DataBase
                     Nauthor = "作者",
                     Ntime = DateTime.Now,
                     Ntag = "通知",
+                    Ntype = "母校新闻",
                     Ncontent = "怎么过一天，就怎么过一生"
                 });
                 dbContext.RequestServices.Add(new RequestService

@@ -141,7 +141,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DonateController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\OriganizationController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,7 +181,6 @@
     <Content Include="Content\images\bg_tips7.png" />
     <Content Include="Content\images\bg_toolbar1.gif" />
     <Content Include="Content\images\bg_toolbar2.gif" />
-    <Content Include="Content\images\big-logo.jpg" />
     <Content Include="Content\images\btn-export.png" />
     <Content Include="Content\images\btn-export2.png" />
     <Content Include="Content\images\btn-send-out.png" />
@@ -265,12 +269,11 @@
     <Content Include="Content\images\pic_course.png" />
     <Content Include="Content\images\pic_course02.png" />
     <Content Include="Content\images\pic_head3.jpg" />
-    <Content Include="Content\images\school-log.jpg" />
     <Content Include="Content\images\sort.png" />
     <Content Include="Content\images\toptriangle.png" />
     <Content Include="Content\images\triangle-block.png" />
     <Content Include="Content\images\triangle.jpg" />
-    <Content Include="Content\images\weixin-weibo.jpg" />
+    <Content Include="Content\New-style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -280,6 +283,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -291,28 +295,18 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Views\Html\activity\act-detail.html" />
-    <Content Include="Views\Html\activity\act-topic.html" />
-    <Content Include="Views\Html\activity\create-act.html" />
-    <Content Include="Views\Html\activity\create-topic.html" />
-    <Content Include="Views\Html\activity\recruit-detail.html" />
-    <Content Include="Views\Html\activity\recruit.html" />
-    <Content Include="Views\Html\activity\topic-detail.html" />
-    <Content Include="Views\Html\contact\contact.html" />
-    <Content Include="Views\Html\Donate\create-donate.html" />
-    <Content Include="Views\Html\Donate\donate-detail.html" />
-    <Content Include="Views\Html\Donate\donate-list.html" />
-    <Content Include="Views\Html\hearder-mode.html" />
-    <Content Include="Views\Html\news\home-page.html" />
-    <Content Include="Views\Html\news\news-detail.html" />
-    <Content Include="Views\Html\origanization\class-list.html" />
-    <Content Include="Views\Html\origanization\create-organization.html" />
-    <Content Include="Views\Html\origanization\organization-detail.html" />
-    <Content Include="Views\Html\origanization\organization-list.html" />
-    <Content Include="Views\Html\service\card-service.html" />
-    <Content Include="Views\Html\service\service-Almuin.html" />
-    <Content Include="Views\Html\service\service-email.html" />
-    <Content Include="Views\Html\service\weixim-weibo.html" />
+    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Donate\DonateCreate.cshtml" />
+    <Content Include="Views\Donate\DonateDetail.cshtml" />
+    <Content Include="Views\Donate\DonateList.cshtml" />
+    <Content Include="Views\News\HomePage.cshtml" />
+    <Content Include="Views\News\NewsDetail.cshtml" />
+    <Content Include="Views\News\NewsPub.cshtml" />
+    <Content Include="Views\Origanization\ClassList.cshtml" />
+    <Content Include="Views\Origanization\OrganizationCreate.cshtml" />
+    <Content Include="Views\Origanization\OriganizationDetail.cshtml" />
+    <Content Include="Views\Origanization\OriganizationList.cshtml" />
+    <Content Include="Views\Service\CardService.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -324,9 +318,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -346,6 +337,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlumniMis.Common\AlumniMis.Common.csproj">
+      <Project>{0edd8367-c03a-4d55-934b-ca94531af92f}</Project>
+      <Name>AlumniMis.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlumniMis.Data\AlumniMis.Data.csproj">
+      <Project>{F9924C86-87DF-49D6-96EA-CAAE1C8B7998}</Project>
+      <Name>AlumniMis.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlumniMis.Services\AlumniMis.Services.csproj">
+      <Project>{39FC5944-57BE-45AA-BFDB-21557308D8F4}</Project>
+      <Name>AlumniMis.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

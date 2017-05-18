@@ -1,0 +1,52 @@
+﻿@using AlumniMis.Data.DataTable
+
+@{
+    ViewBag.Title = "新闻详情";
+    NewRelease news = ViewBag.News as NewRelease;
+}
+
+<style>
+    .datal-news h3{
+        width:100%;
+        text-align:center;
+        line-height:30px;
+        font-size:20px;
+    }
+    .detail{
+        height:24px;
+        line-height:24px;
+        text-align:right;
+    }
+    .datal-news p{
+        line-height:24px;
+        font-size:14px;
+    }
+    .datal-news img{
+        width:100%;
+        max-width:100%;
+        max-height:100%;
+    }
+</style>
+
+<div class="tooltip-bar-address">
+    您的位置：<a href="/News/HomePage" class="user-address">首页</a>
+    <em>&#62</em> 新闻详情
+</div>
+<div class="datal-news">
+    <h3>@news.Ntit</h3>
+    <div class="detail">
+        <span class="new-aut">本文作者：@news.Nauthor</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="new-time">@news.Ntime.ToShortDateString()</span>
+    </div>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        @news.Ncontent
+    </p>
+    <img/>
+</div>
+
+<script type="text/javascript">
+    $(function($) {
+        $("#alumni_navbar1").addClass("nav-current");
+        $(".second-menu").hide();
+    });
+</script>

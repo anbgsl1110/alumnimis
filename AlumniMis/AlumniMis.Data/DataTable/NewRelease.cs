@@ -38,6 +38,11 @@ namespace AlumniMis.Data.DataTable
         public string Ntag { get; set; }
 
         /// <summary>
+        /// 新闻类型
+        /// </summary>
+        public string Ntype { get; set; }
+
+        /// <summary>
         /// 新闻内容
         /// </summary>
         public string Ncontent { get; set; }

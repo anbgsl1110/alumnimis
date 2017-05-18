@@ -43,7 +43,7 @@
     <Compile Include="ServiceResult.cs" />
     <Compile Include="Service\IService\IActivityService.cs" />
     <Compile Include="Service\IService\IAdminInfoService.cs" />
-    <Compile Include="Service\IService\IAluminiInfoService.cs" />
+    <Compile Include="Service\IService\IAlumniInfoService.cs" />
     <Compile Include="Service\IService\IAlumniOrganService.cs" />
     <Compile Include="Service\IService\IBaseService.cs" />
     <Compile Include="Service\IService\IDonateService.cs" />
@@ -52,8 +52,8 @@
     <Compile Include="Service\IService\IUserService.cs" />
     <Compile Include="Service\Service\ActivityService.cs" />
     <Compile Include="Service\Service\AdmininfoService.cs" />
-    <Compile Include="Service\Service\AluminiInfoService.cs" />
-    <Compile Include="Service\Service\AluminiOrganService.cs" />
+    <Compile Include="Service\Service\AlumniInfoService.cs" />
+    <Compile Include="Service\Service\AlumniOrganService.cs" />
     <Compile Include="Service\Service\BaseService.cs" />
     <Compile Include="Service\Service\DonateService.cs" />
     <Compile Include="Service\Service\NewReleaseService.cs" />

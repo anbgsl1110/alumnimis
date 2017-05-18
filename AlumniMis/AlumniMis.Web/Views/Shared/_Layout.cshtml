@@ -1,43 +1,249 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/layout.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
+    <link href="~/Content/css/New-style.css" rel="stylesheet">
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <style>
+
+        .new-container{
+            padding-bottom:20px;
+        }
+
+        .mainbg{
+            background:#fff;
+            padding:20px;
+        }
+
+        .login-in{
+            float:right;
+            height:32px;
+            line-height:32px;;
+        }
+        .login-in a{
+            color:#fff;
+            cursor:pointer;
+        }
+        /*  登录注册的弹窗ＣＳＳ*/
+        .password-change,.login-win{
+            position:fixed;
+            left:35%;
+            top:20%;
+            width:400px;
+            padding:20px;
+            height:350px;
+            border:1px solid #afafaf;
+            border-radius:3px;
+            background:#fff;
+        }
+        .password-change h3, .register-win h3, .login-win h3{
+            width:100%;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            margin-bottom:20px;
+
+        }
+        .password-change div,.register-win div, .login-win div{
+            margin-bottom:20px;
+        }
+        .submit{
+            width:100%;
+            height:30px;
+            line-height:30px;
+            background:#00b4f5;
+            text-align: center;
+            margin-top:50px;
+        }
+        .submit button{
+            color:#fff;
+            background:none;
+            border:0 none;
+        }
+        .cancel{
+            position:absolute;
+            top:2px;
+            right:4px;
+            cursor:pointer;
+        }
+        .register-win{
+            position:fixed;
+            left:35%;
+            top:20%;
+            width:350px;
+            padding:20px;
+            height:470px;
+            border:1px solid #afafaf;
+            border-radius:3px;
+            background:#fff;
+
+        }
+        /*第二级子菜单的css*/
+        .first-menu{
+            position:relative;
+        }
+        .second-menu{
+            position:absolute;
+            left:3px;
+            top:32px;
+            background:#fff;
+            width:200px;
+            border:1px solid #a9a9a9;
+            border-radius:3px;
+
+        }
+        .second-menu li{
+            width:200px;
+            padding-left:20px;
+            border-radius:3px;
+            height:30px;
+            line-height:30px;
+        }
+        .second-menu li a{
+            font-size:14px;
+            color:#000;
+        }
+        .second-menu li:hover{
+            background:#00b4f5;
+        }
+    </style>
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("应用程序名称", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+<body class="body-bgColor">
+<div class="body-layout">
+    <!-- 顶部导航与logo begin {-->
+    <div class="new-navbar-box new-navbar-fixed-top">
+        <div class="new-navbar-top" style="display: block;">
+            <div class="new-navbar-top-content">
+                <h3 class="new-navbar-top-title">校友信息管理系统</h3>
+                <div class="login-in" >
+                    <a>请登录</a>
+                </div>
+                <!--校友登陆后出现的信息-->
+                <div class="new-navbar-userID" style="display:none;">
+                    欢迎校友<span class="new-navbar-userName">周树琴</span><em class="Drop-icon"></em>
+                    <div class="Drop-box">
+                        <span class="Drop-box-item">修改密码</span>
+                        <span class="Drop-box-item">注销</span>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                </ul>
+        </div>
+        <div class="new-navbar">
+            <div class="new-container clearfix">
+                <div class="new-navbar-header" style="display: block;">
+                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="~/Content/images/school-log.jpg" width="50" height="50"></a>
+                </div>
+                <div class="new-navbar-nav navbar-content">
+                    <!-- 导航里面的一级导航 begin {-->
+                    <ul class="new-navbar-nav-left clearfix">
+                        <li class="new-navbar-nav-item"><a href="/News/HomePage" id="alumni_navbar1">首页</a></li>
+                        <li class="new-navbar-nav-item"><a href="/Origanization/OriganizationList" id="alumni_navbar2">校友组织</a></li>
+                        <li class="new-navbar-nav-item"><a href="#" id="alumni_navbar3">校友天地</a></li>
+                        <li class="new-navbar-nav-item first-menu"  id="alumni_navbar4"><a href="#">校友服务</a>
+                            <ul class="second-menu" style="display:none">
+                                <li><a href="/Service/CardService">校友卡服务</a></li>
+                                <li><a href="#">校友接待</a></li>
+                                <li><a href="#">校友邮箱</a></li>
+                                <li><a href="#">母校校友服务组织</a></li>
+                            </ul>
+                        </li>
+                        <li class="new-navbar-nav-item"><a href="/Donate/DonateList"  id="alumni_navbar5">校友捐赠</a></li>
+                        <li class="new-navbar-nav-item"><a href="/Contact/Contact"  id="alumni_navbar6">联系我们</a></li>
+                    </ul>
+                    <!--} 导航里面的一级导航 end -->
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <!--} 顶部导航与logo end -->
+    <div class="new-container mainbg">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
+    </div>
+    <!--登录窗口-->
+    <div class="login-win" style="display:none;">
+        <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
+        <h3>登录界面</h3>
+        <form>
+            <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>
+            <div><span class="detail-title1">密码</span><input type="text" class="form-text-normal"><a href="##">&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</a></div>
+            <div style="margin-left:30px;"><input type="checkbox" checked><span class="">记住用户名和密码</span></div>
+            <div style="margin-left:30px; cursor:pointer" class="toReg"><a>没有账号？去注册>></a></div>
+            <div class="submit"><button >登录</button></div>
+        </form>
+    </div>
+    <!--注册窗口-->
+    <div class="register-win" style="display:none">
+        <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
+        <h3>注册界面</h3>
+        <form>
+            <div><span class="detail-title1">输入姓名</span><input type="text" class="form-text-normal"></div>
+            <div><span class="detail-title1">输入学号</span><input type="password" class="form-text-normal"></div>
+            <div><span class="detail-title1">入学年份</span><input type="text" class="form-text-normal"></div>
+            <div><span class="detail-title1">所在班级</span><input type="password" class="form-text-normal"></div>
+            <div><span class="detail-title1">所在院系</span><input type="password" class="form-text-normal"></div>
+            <div><span class="detail-title1">设置密码</span><input type="password" class="form-text-normal"></div>
+            <div style="margin-left:30px; cursor:pointer" class="toLogin"><a>已有账号？去登录>></a></div>
+            <div class="submit"><button >注册</button></div>
+        </form>
+    </div>
+    <!--修改密码窗口-->
+    <div class="password-change" style="display:none;">
+        <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
+        <h3>修改密码界面</h3>
+        <form>
+            <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>
+            <div><span class="detail-title1">旧密码</span><input type="text" class="form-text-normal"></div>
+            <div><span class="detail-title1">新密码</span><input type="text" class="form-text-normal"></div>
+            <div class="submit"><button >修改</button></div>
+        </form>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+</div>
+<script>
+    /*导航切换*/
+    $(".new-navbar-nav-left>li>a").click(function(){
+        $(".new-navbar-nav-left>li>a").removeClass("nav-current");
+        $(this).addClass("nav-current");
+        $(".second-menu").hide();
+    });
+    /*第二级子菜单打开*/
+    $(".first-menu").click(function(){
+        if($(".first-menu>a").hasClass("nav-current")){
+            if($(".second-menu").is(":hidden")){
+
+                $(".second-menu").show();
+            }else{
+                $(".second-menu").hide();
+            }
+        }
+    });
+    /*登录与注册页面的出现于转换*/
+    $(".login-in").click(function(){
+        $(".login-win").show();
+    });
+    $(".cancel").click(function() {
+        $(this).parent().hide();
+    });
+    $(".toReg").click(function() {
+        $(".login-win").hide();
+        $(".register-win").show();
+
+    });
+
+    $(".toLogin").click(function() {
+        $(".login-win").show();
+        $(".register-win").hide();
+
+    });
+    /*修改密码界面的js*/
+    $(".Drop-box-item").click(function() {
+
+        $(".password-change").show();
+    });
+</script>
 </body>
 </html>

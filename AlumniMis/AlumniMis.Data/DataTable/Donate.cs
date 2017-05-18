@@ -33,6 +33,16 @@ namespace AlumniMis.Data.DataTable
         public DateTime Dpub { get; set; }
 
         /// <summary>
+        /// 捐赠金额
+        /// </summary>
+        public long Damount { get; set; }
+
+        /// <summary>
+        /// 捐赠理由
+        /// </summary>
+        public string Dreason { get; set; }
+
+        /// <summary>
         /// 项目发起人
         /// </summary>
         public string Dpuber { get; set; }
