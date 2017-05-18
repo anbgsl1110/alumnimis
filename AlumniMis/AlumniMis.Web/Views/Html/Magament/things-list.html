@@ -11,17 +11,17 @@
         .new-container{
             padding-bottom:20px;
         }
-        .audit-donate h3, .audit-recruit h3,.audit-act h3, .audit-topic h3{
+        .audit-org h3,.audit-donate h3, .audit-recruit h3,.audit-act h3, .audit-topic h3{
             padding:10px;
 
         }
-        .donate-list,.recruit-list,.topic-list,.act-list{
+        .org-list, .donate-list,.recruit-list,.topic-list,.act-list{
             height:193px;
             margin:10px;
             border:1px solid #ccc;
             overflow: hidden;
         }
-        .donate-detail,.recruit-detail, .topic-detail,.act-detail{
+        .org-detail, .donate-detail,.recruit-detail, .topic-detail,.act-detail{
             width:100%;
             height:24px;
             border-bottom:1px dashed  #ccc;
@@ -29,22 +29,22 @@
             padding:0 5px;
             cursor:pointer;
         }
-        .donate-detail div,.recruit-detail div,.act-detail div,.topic-detail div{
+        .org-detail div,.donate-detail div,.recruit-detail div,.act-detail div,.topic-detail div{
             float:left;
 
         }
-        .donate-detail .donate-tit,.recruit-detail  .recruit-tit,.topic-detail .topic-tit,.act-detail  .act-tit{
+        .org-detail .org-tit,.donate-detail .donate-tit,.recruit-detail  .recruit-tit,.topic-detail .topic-tit,.act-detail  .act-tit{
             width:60%;
             text-align:center;
             overflow:hidden;
             white-space:nowrap;
             text-overflow:ellipsis;
         }
-        .donate-detail .donate-aut ,.recruit-detail .recruit-aut,.act-detail .act-aut ,.topic-detail .topic-aut{
+        .org-detail .org-aut ,.donate-detail .donate-aut ,.recruit-detail .recruit-aut,.act-detail .act-aut ,.topic-detail .topic-aut{
             width:25%;
             text-align:center;
         }
-        .donate-detail .donate-time, .recruit-detail .recruit-time,.act-detail .act-time, .topic-detail .topic-time{
+        .org-detail .org-time,.donate-detail .donate-time, .recruit-detail .recruit-time,.act-detail .act-time, .topic-detail .topic-time{
             float:right;
             width:15%;
             text-align:center;
@@ -197,6 +197,17 @@
     </div>
     <!--} 顶部导航与logo end -->
     <div class="new-container mainbg">
+        <div class="audit-org">
+            <h3>待审核组织信息</h3>
+            <div class="org-list">
+                <div class="org-detail">
+                    <div class="org-tit">组织名称</div><div class="org-aut">申请人</div><div class="org-time">申请时间</div>
+                </div>
+                <div class="org-detail" onclick="window.location.href= 'audit-detail.html';return false">
+                    <div class="org-tit">安徽校友组织</div><div class="org-aut">13级校友</div><div class="org-time">2017-5-12</div>
+                </div>
+            </div>
+        </div>
         <div class="audit-topic">
             <h3>待审核话题</h3>
             <div class="topic-list">
