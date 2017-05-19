@@ -299,7 +299,13 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Activity\ActivityCreate.cshtml" />
+    <Content Include="Views\Activity\ActivityDetail.cshtml" />
     <Content Include="Views\Activity\ActivityList.cshtml" />
+    <Content Include="Views\Activity\RecruitDetail.cshtml" />
+    <Content Include="Views\Activity\RecruitList.cshtml" />
+    <Content Include="Views\Activity\TopicCreate.cshtml" />
+    <Content Include="Views\Activity\TopicDetail.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Donate\DonateCreate.cshtml" />
     <Content Include="Views\Donate\DonateDetail.cshtml" />
