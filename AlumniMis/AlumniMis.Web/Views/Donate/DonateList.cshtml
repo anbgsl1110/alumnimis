@@ -107,7 +107,7 @@
     });
     var deletedonate = function(id)
     {
-        var ajax = {
+        /*var ajax = {
             url: "/Donate/DeleteDonate/"+id,
             type: 'Post',
             dataType: 'json',
@@ -117,6 +117,10 @@
                 window.location.href = "/Donate/DonateList";
             }
         }
-        $.ajax(ajax);
+        $.ajax(ajax);*/
+        $.post("/Donate/DeleteDonate/" + id,
+            function() {
+                window.location.href = "/Donate/DonateList";
+            });
     }
 </script>
