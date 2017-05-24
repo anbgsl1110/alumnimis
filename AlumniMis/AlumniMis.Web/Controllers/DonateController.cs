@@ -63,5 +63,19 @@ namespace AlumniMis.Web.Controllers
 
             return Json(result);
         }
+
+        /// <summary>
+        /// 删除捐赠
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DeleteDonate(long id)
+        {
+            DonateService donateService = new DonateService();
+            var result = donateService.Delete(new Donate(), id);
+
+            return Json(result);
+        }
     }
 }

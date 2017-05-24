@@ -42,6 +42,16 @@ namespace AlumniMis.Services.Service.Service
             return new ServiceResult<ServiceStateEnum>();
         }
 
+        public ServiceResult<ServiceStateEnum, int> InsertWithIdentity<T>(T t)
+        {
+            var result = AlumniInfoProvider.InsertWithIdentity(t);
+            return new ServiceResult<ServiceStateEnum, int>
+            {
+                State = ServiceStateEnum.Success,
+                Data = result
+            };
+        }
+
         public ServiceResult<ServiceStateEnum> Delete<T>(T t, long id)
         {
             AlumniInfoProvider.Delete(t, id);

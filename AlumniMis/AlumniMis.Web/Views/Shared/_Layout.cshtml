@@ -168,11 +168,11 @@
         <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
         <h3>登录界面</h3>
         <form>
-            <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal"></div>
-            <div><span class="detail-title1">密码</span><input type="text" class="form-text-normal"><a href="##">&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</a></div>
+            <div><span class="detail-title1">用户名</span><input type="text" class="form-text-normal" id="home_login_UserName"></div>
+            <div><span class="detail-title1">密码</span><input type="text" class="form-text-normal" id="home_login_Password"><a href="##">&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</a></div>
             <div style="margin-left:30px;"><input type="checkbox" checked><span class="">记住用户名和密码</span></div>
             <div style="margin-left:30px; cursor:pointer" class="toReg"><a>没有账号？去注册>></a></div>
-            <div class="submit"><button >登录</button></div>
+            <div class="submit"><button id="home_login_save">登录</button></div>
         </form>
     </div>
     <!--注册窗口-->
@@ -180,14 +180,14 @@
         <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
         <h3>注册界面</h3>
         <form>
-            <div><span class="detail-title1">输入姓名</span><input type="text" class="form-text-normal"></div>
-            <div><span class="detail-title1">输入学号</span><input type="password" class="form-text-normal"></div>
-            <div><span class="detail-title1">入学年份</span><input type="text" class="form-text-normal"></div>
-            <div><span class="detail-title1">所在班级</span><input type="password" class="form-text-normal"></div>
-            <div><span class="detail-title1">所在院系</span><input type="password" class="form-text-normal"></div>
-            <div><span class="detail-title1">设置密码</span><input type="password" class="form-text-normal"></div>
+            <div><span class="detail-title1">输入姓名</span><input type="text" class="form-text-normal" id="home_reg_Aname"></div>
+            <div><span class="detail-title1">输入学号</span><input type="text" class="form-text-normal" id="home_reg_Anum"></div>
+            <div><span class="detail-title1">性别</span><input type="text" class="form-text-normal" id="home_reg_Asex"></div>
+            <div><span class="detail-title1">所在班级</span><input type="text" class="form-text-normal" id="home_reg_Aclass"></div>
+            <div><span class="detail-title1">所在院系</span><input type="text" class="form-text-normal" id="home_reg_Acoll"></div>
+            <div><span class="detail-title1">设置密码</span><input type="password" class="form-text-normal" id="home_reg_password"></div>
             <div style="margin-left:30px; cursor:pointer" class="toLogin"><a>已有账号？去登录>></a></div>
-            <div class="submit"><button >注册</button></div>
+            <div class="submit"><button id = "home_reg_save">注册</button></div>
         </form>
     </div>
     <!--修改密码窗口-->
@@ -231,7 +231,7 @@
     $(".toReg").click(function() {
         $(".login-win").hide();
         $(".register-win").show();
-
+        
     });
 
     $(".toLogin").click(function() {
@@ -241,8 +241,63 @@
     });
     /*修改密码界面的js*/
     $(".Drop-box-item").click(function() {
-
         $(".password-change").show();
+    });
+    /*注册*/
+    $("#home_reg_save").click(function() {
+        var user = {
+            UserName: $("#home_reg_Aname").val(),
+            Password: $("#home_reg_password").val(),
+        }
+        var alumniInfo = {
+            Aname:  $("#home_reg_Aname").val(),
+            Anum: $("#home_reg_Anum").val(),
+            Asex: $("#home_reg_Asex").val(),
+            Aclass: $("#home_reg_Aclass").val(),
+            Acoll: $("#home_reg_Acoll").val()
+        }
+        var req = {
+            User: user,
+            AlumniInfo: alumniInfo
+        }
+        var ajax = {
+            url: "/Home/Reg",
+            data: JSON.stringify(req),
+            type: 'Post',
+            dataType: 'json',
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function () {
+                alert('操作成功');
+                window.location.href = '/News/HomePage';
+            }
+        }
+        $.ajax(ajax);
+    });
+    /*登录*/
+    $("#home_login_save").click(function() {
+        var user = {
+            UserName: $("#home_login_UserName").val(),
+            Password: $("#home_login_Password").val()
+        }
+        var ajax = {
+            url: "/Home/Login",
+            data: JSON.stringify(user),
+            type: 'Post',
+            dataType: 'json',
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (result) {
+                if (result == 1) {
+                    alert('操作成功');
+                    window.location.href = '/News/HomePage';
+                }
+                if (result == 0) {
+                    alert('用户名或密码错误');
+                }       
+            }
+        }
+        $.ajax(ajax);
     });
 </script>
 </body>

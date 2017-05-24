@@ -7,7 +7,6 @@ namespace AlumniMis.Web.Controllers
     /// </summary>
     public class BaseController : Controller
     {
-
         /// <summary>
         /// 错误界面
         /// </summary>

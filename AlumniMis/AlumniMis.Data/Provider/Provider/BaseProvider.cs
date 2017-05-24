@@ -54,6 +54,21 @@ namespace AlumniMis.Data.Provider.Provider
                 con.Execute(sql, GetObjectParameters(t));
             }
         }
+        
+        /// <summary>
+        /// 插入数据
+        /// </summary>
+        /// <param name="t"></param>
+        /// <typeparam name="T"></typeparam>
+        public int InsertWithIdentity<T>(T t)
+        {
+            using (var con = DbFactory.GetNewConnection())
+            {
+                string sql = $@"CALL {GetObjectName(t)}_Insert({GetObjectPropertyString(t)})";
+                var result = con.Query<int>(sql, GetObjectParameters(t)).FirstOrDefault();
+                return result;
+            }
+        }
 
         /// <summary>
         /// 根据Id删除数据
