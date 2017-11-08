@@ -8,5 +8,5 @@
 ** 使用技术
 - mysql
 - asp .net mvc
-- dapper
 - jquery
+- dapper
