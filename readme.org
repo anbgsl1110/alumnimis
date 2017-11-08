@@ -6,7 +6,7 @@
 2. 校友天地
 3. 校友服务
 ** 使用技术
+- mysql
 - asp .net mvc
 - dapper
-- mysql
 - jquery
