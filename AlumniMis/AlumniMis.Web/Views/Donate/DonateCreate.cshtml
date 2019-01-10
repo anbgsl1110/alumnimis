@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "捐赠创建";
+}
+
+
+
+<div class="tooltip-bar clearfix">
+    <div class="tooltip-bar-address">
+        您的位置：<a href="/Donate/DonateList" class="user-address">校友捐赠</a> <em>&#62</em> 创建新项目
+    </div>
+</div>
+
+<div class="new-section">
+    <div class="detail-head">新建捐赠项目</div>
+    <div class="detail-middle5">
+        <div class="clearfix">
+            <ul class="user-box-ul clearfix">
+                <li class="clearfix">
+                    <span class="detail-title1">项目名称</span>
+                    <input type="text" class="form-text-normal" id="donate_Dname">
+                </li>
+                <li class="clearfix">
+                    <span class="detail-title1">捐赠金额</span>
+                    <input type="text" class="form-text-normal" id="donate_Damount">
+                </li>
+                <li class="clearfix">
+                    <span class="detail-title1">联系方式</span>
+                    <input type="text" class="form-text-normal" id="donate_Dtel">
+                </li>
+
+            </ul>
+        </div>
+        <div class="clearfix">
+            <div class="detail-title1">标签</div>
+            <ul class="new-detail-style">
+                <li>
+                    <div class="input-tag" style="display:none;"><span class="detail-title1">请输入标签名</span><input type="text" id="tag" class="form-text-normal"/></div>
+                    <button type="button" class="btn-add-s1" title="添加"></button>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix">
+            <span class="detail-title1">创建理由</span>
+            <textarea class="form-text-area-s2" style="width:889px;" id="donate_Dreason"></textarea>
+        </div>
+
+    </div>
+    <div class="new-detail-bottom clearfix">
+        <button type="button" class="btn-default btn-sure"  id="donate_Create">确定</button>
+        <button type="button" class="btn-default btn-cancel"  onclick="window.location.href = '/Donate/DonateList'">取消</button>
+    </div>
+</div>
+
+<script>
+    /* 添加新标签和删除标签*/
+    $(".delete-icon").click(function() {
+        $(this).parent().remove();
+    })
+    $(".btn-add-s1").click(function() {
+        $(this).hide();
+        $(".input-tag").show().attr("value",'');
+
+    });
+    /* "创建新标签"*/
+    $(".form-text-normal").keypress(function(){
+        if (event.keyCode == 13) {
+
+            var $text = $("#tag").val();
+            $(".btn-add-s1").show();
+            $(".input-tag").hide();
+            if ($text == "") {
+
+            } else {
+                var $htm = $(' <li class="new-detail-item">' +
+                    '<span class="option-city-item">' +
+                    $text +
+                    '</span>' +
+                    '<em class="delete-icon">✖</em>' +
+                    ' </li>');
+                $(".new-detail-style").prepend($htm);
+                $(".delete-icon").on("click",
+                    function() {
+                        $(this).parent().remove();
+                    });
+            }
+        }
+    });
+    /*创建捐赠*/
+    $('#donate_Create').click(function() {
+        var donate = {
+            Dname: $("#donate_Dname").val(),
+            Damount: $("#donate_Damount").val(),
+            Dtel: $("#donate_Dtag").val(),
+            Dtag: "系统",
+            Dreason: $("#donate_Dreason").val()
+        }
+        var ajax = {
+            url: "/Donate/CreateDonate",
+            data: JSON.stringify(donate),
+            type: 'Post',
+            dataType: 'json',
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function () {
+                alert('创建捐赠成功');
+                window.location.href = '/Donate/DonateList';
+            },
+            error: function () {
+                alert('创建捐赠失败,请查看网络状态');
+                return;
+            }
+        }
+        $.ajax(ajax);
+    });
+</script>
+
+<script type="text/javascript">
+    $(function($) {
+        $("#alumni_navbar5").addClass("nav-current");
+        $(".second-menu").hide();
+    });
+</script>

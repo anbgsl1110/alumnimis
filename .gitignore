@@ -226,17 +226,7 @@ pip-log.txt
 #############
 [Ll]og
 [Ll]og[Dd]ata
-/ShiningStar.Web/app/node_modules
-/ShiningStar.Web/node_modules
 *.nupkg
 /.vs
-/SchoolPal.Web/avatar
-/SchoolPal.Web/Common/node_modules
-/SchoolPal.Web/node_modules
-/SchoolPalMobile.Web/node_modules
-/SchoolPalHomeWechart.Web/node_modules
-/SchoolPal.Web/Common/dist
-/SchoolPal.Web/stats.json
-/SchoolPalMobile.Web/stats.json
-/SchoolPalMobile.Web/scripts/dist
+
 

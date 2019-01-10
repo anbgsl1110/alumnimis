@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "校友天地";
+}
+
+<style>
+    .select-topic{
+        margin-top:15px;
+        width:100%;
+    }
+    .add{
+        float:right;
+        margin-right:10px;
+        cursor:pointer;
+    }
+    .add img{
+        margin-top:-2px;
+        margin-right:4px;
+    }
+    .act-list{
+        height:193px;
+        margin:10px;
+        border:1px solid #ccc;
+    }
+    .act-detail{
+        width:100%;
+        height:24px;
+        border-bottom:1px dashed  #ccc;
+        line-height:24px;
+        padding:0 5px;
+        cursor: pointer;
+        position: relative;
+    }
+    .act-detail div{
+        float:left;
+
+    }
+    .act-detail  .act-tit{
+        width:40%;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        text-align:center;
+    }
+    .act-detail .act-aut{
+        width:15%;
+        text-align:center;
+    }
+    .act-detail .act-time{
+        float:right;
+        width:15%;
+        text-align:center;
+    }
+    .act-detail .pub-time{
+        float:right;
+        width:15%;
+        text-align:center;
+    }
+    .act-detail .act-pop{
+        width:15%;
+        text-align:center;
+    }
+    .topic-list{
+        height:193px;
+        margin:10px;
+        border:1px solid #ccc;
+    }
+    .topic-detail{
+        width:100%;
+        height:24px;
+        border-bottom:1px dashed  #ccc;
+        line-height:24px;
+        padding:0 5px;
+        cursor:pointer;
+        position: relative;
+    }
+    .delete-item {
+        position: absolute;
+        right: 2px;
+        top: -1px;
+        cursor: pointer;
+        z-index: 9999;
+
+    }
+    .topic-detail div{
+        float:left;
+
+    }
+    .topic-detail  .topic-tit{
+        width:50%;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        text-align:center;
+    }
+    .topic-detail .topic-aut{
+        width:20%;
+        text-align:center;
+    }
+    .topic-detail .topic-time{
+        float:right;
+        width:15%;
+        text-align:center;
+    }
+    .topic-detail .topic-pop{
+        width:15%;
+        text-align:center;
+    }
+    .recruit{
+        margin-top:20px;
+        height:24px;
+        line-height:24px;
+        font-size:14px;
+    }
+    .recruit a{
+        color:#ea2c5a;
+    }
+</style>
+
+<div class="">
+    您的位置：<a href="/Activity/ActivityList" class="user-address">校友天地</a> <em>&#62</em> 活动列表
+</div>
+<div class="select-topic">
+    <label>筛选活动：</label>
+    <select>
+        <option selected> 最新发步 </option>
+        <option selected> 人气最高 </option>
+        <option selected> 最近举办 </option>
+    </select>
+    <div class="add"  onclick="window.location.href= '/Activity/ActivityCreate';return false">
+        <img src="~/Content/images/btn_teacher_add.png" width="20" height="20"/><span>创建新活动</span>
+    </div>
+</div>
+<div class="act-list">
+    <div class="act-detail">
+        <div class="act-tit">活动标题</div><div class="act-aut">发布者</div><div class="act-pop">人气指数</div>
+        <div class="act-time">发布时间</div><div class="act-time">举办时间</div>
+    </div>
+    <div class="act-detail" onclick="window.location.href= '/Activity/ActivityDetail';return false">
+        <div class="act-tit">周日登山活动</div><div class="act-aut">13级安徽校友</div><div class="act-pop">9</div>
+        <div class="pub-time">2017-5-12</div><div class="act-time">2017-5-16</div>
+        <!--只有管理员才能看到这个删除按钮，删除这条信息-->
+        <div class="delete-item"><img src="~/Content/images/icon_delete_1.png"/></div>
+    </div>
+</div>
+<div class="select-topic" style="margin-top:40px;">
+    <label>筛选话题：</label>
+    <select>
+        <option selected> 最新发表 </option>
+        <option selected> 人气最高 </option>
+    </select>
+    <div class="add" onclick="window.location.href= '/Activity/TopicCreate';return false">
+        <img src="~/Content/images/btn_teacher_add.png" width="20" height="20"/><span>创建新话题</span>
+    </div>
+</div>
+<div class="topic-list">
+    <div class="topic-detail">
+        <div class="topic-tit">话题标题</div><div class="topic-aut">发布者</div><div class="topic-pop">人气指数</div>
+        <div class="topic-time">发布时间</div>
+    </div>
+    <div class="topic-detail" onclick="window.location.href= '/Activity/TopicDetail';return false">
+        <div class="topic-tit">我校参与承办“2017年全国微波毫米波会议”</div><div class="topic-aut">电子信息学院</div><div class="topic-pop">9</div>
+        <div class="topic-time">2017-5-12</div>
+        <!--只有管理员才能看到这个删除按钮，删除这条信息-->
+        <div class="delete-item"><img src="~/Content/images/icon_delete_1.png"/></div>
+    </div>
+</div>
+<div class="recruit">
+    <a href="/Activity/RecruitList">发布招聘信息入口>>>>>>></a>
+</div>
+
+<script>
+    /*导航切换*/
+    $(function($) {
+        $("#alumni_navbar3").addClass("nav-current");
+        $(".second-menu").hide();
+    });
+    /*删除这条信息*/
+    $(".delete-item").bind("click",
+        function(event) {
+            event.stopPropagation();
+            $(this).parent().remove();
+
+        });
+</script>

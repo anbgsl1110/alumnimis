@@ -1,0 +1,12 @@
+* alumnimis
+** 介绍
+一个简单的校友管理信息系统。
+** 基本功能
+1. 校友组织
+2. 校友天地
+3. 校友服务
+** 使用技术
+- mysql
+- asp .net mvc
+- jquery
+- dapper
