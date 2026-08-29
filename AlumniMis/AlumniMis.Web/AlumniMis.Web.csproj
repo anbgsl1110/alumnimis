@@ -141,15 +141,145 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActivityController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DonateController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\OriganizationController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\copy_s.css" />
+    <Content Include="Content\css\dialog-theme-custom.css" />
+    <Content Include="Content\css\layout.css" />
+    <Content Include="Content\css\New-style.css" />
+    <Content Include="Content\css\statistics.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\images\bg_errorbox.png" />
+    <Content Include="Content\images\bg_listbox10.png" />
+    <Content Include="Content\images\bg_listbox4.gif" />
+    <Content Include="Content\images\bg_listbox4.png" />
+    <Content Include="Content\images\bg_listbox5.gif" />
+    <Content Include="Content\images\bg_listbox6.gif" />
+    <Content Include="Content\images\bg_Megbox3.png" />
+    <Content Include="Content\images\bg_nodata_1.png" />
+    <Content Include="Content\images\bg_nodata_2.png" />
+    <Content Include="Content\images\bg_teacher_header.png" />
+    <Content Include="Content\images\bg_text_follow.png" />
+    <Content Include="Content\images\bg_tips3_1.png" />
+    <Content Include="Content\images\bg_tips3_2.png" />
+    <Content Include="Content\images\bg_tips3_3.png" />
+    <Content Include="Content\images\bg_tips3_4.png" />
+    <Content Include="Content\images\bg_tips5_1.png" />
+    <Content Include="Content\images\bg_tips5_2.png" />
+    <Content Include="Content\images\bg_tips7.png" />
+    <Content Include="Content\images\bg_toolbar1.gif" />
+    <Content Include="Content\images\bg_toolbar2.gif" />
+    <Content Include="Content\images\big-logo.jpg" />
+    <Content Include="Content\images\btn-export.png" />
+    <Content Include="Content\images\btn-export2.png" />
+    <Content Include="Content\images\btn-send-out.png" />
+    <Content Include="Content\images\btn_add.png" />
+    <Content Include="Content\images\btn_edit.png" />
+    <Content Include="Content\images\btn_role1.png" />
+    <Content Include="Content\images\btn_teacher_add.png" />
+    <Content Include="Content\images\classhour_icon3.png" />
+    <Content Include="Content\images\ico12_web1.png" />
+    <Content Include="Content\images\icon-loading1.gif" />
+    <Content Include="Content\images\icon_add.png" />
+    <Content Include="Content\images\icon_addstuRoom_room.png" />
+    <Content Include="Content\images\icon_addstuRoom_stu.png" />
+    <Content Include="Content\images\icon_add_1.png" />
+    <Content Include="Content\images\icon_bg1.png" />
+    <Content Include="Content\images\icon_bg10_1.png" />
+    <Content Include="Content\images\icon_bg12_1.png" />
+    <Content Include="Content\images\icon_bg12_3.png" />
+    <Content Include="Content\images\icon_bg15.png" />
+    <Content Include="Content\images\icon_bg16.gif" />
+    <Content Include="Content\images\icon_bg2.png" />
+    <Content Include="Content\images\icon_bg20.png" />
+    <Content Include="Content\images\icon_bg21.png" />
+    <Content Include="Content\images\icon_bg22.png" />
+    <Content Include="Content\images\icon_bg23.png" />
+    <Content Include="Content\images\icon_bg2_2.png" />
+    <Content Include="Content\images\icon_bg2_3.png" />
+    <Content Include="Content\images\icon_bg2_4.png" />
+    <Content Include="Content\images\icon_bg3.png" />
+    <Content Include="Content\images\icon_bg4.png" />
+    <Content Include="Content\images\icon_bg4_2.png" />
+    <Content Include="Content\images\icon_bg4_3.png" />
+    <Content Include="Content\images\icon_bg5_1.png" />
+    <Content Include="Content\images\icon_bg6_1.png" />
+    <Content Include="Content\images\icon_bg8_1.png" />
+    <Content Include="Content\images\icon_bg8_2.png" />
+    <Content Include="Content\images\icon_bg8_3.png" />
+    <Content Include="Content\images\icon_bg9_1.png" />
+    <Content Include="Content\images\icon_bg9_2.png" />
+    <Content Include="Content\images\icon_bg9_3.png" />
+    <Content Include="Content\images\icon_bg9_4.png" />
+    <Content Include="Content\images\icon_bg9_5.png" />
+    <Content Include="Content\images\icon_bg9_6.png" />
+    <Content Include="Content\images\icon_btn3_1.png" />
+    <Content Include="Content\images\icon_btn3_2.png" />
+    <Content Include="Content\images\icon_btn5_1.png" />
+    <Content Include="Content\images\icon_btn7_1.png" />
+    <Content Include="Content\images\icon_btn9.png" />
+    <Content Include="Content\images\icon_classify.png" />
+    <Content Include="Content\images\icon_classify2.png" />
+    <Content Include="Content\images\icon_configure_paper_refresh.png" />
+    <Content Include="Content\images\icon_Course2.png" />
+    <Content Include="Content\images\icon_delete.png" />
+    <Content Include="Content\images\icon_delete_1.png" />
+    <Content Include="Content\images\icon_delete_3.png" />
+    <Content Include="Content\images\icon_dian.jpg" />
+    <Content Include="Content\images\icon_edit_1.png" />
+    <Content Include="Content\images\icon_edit_2.png" />
+    <Content Include="Content\images\icon_new1.png" />
+    <Content Include="Content\images\icon_new2.png" />
+    <Content Include="Content\images\icon_new3.png" />
+    <Content Include="Content\images\icon_nodata.png" />
+    <Content Include="Content\images\icon_progressbar.png" />
+    <Content Include="Content\images\icon_resetting.png" />
+    <Content Include="Content\images\icon_role1.png" />
+    <Content Include="Content\images\icon_search1.png" />
+    <Content Include="Content\images\icon_task18_4.png" />
+    <Content Include="Content\images\icon_task2_8.png" />
+    <Content Include="Content\images\icon_task2_9.png" />
+    <Content Include="Content\images\icon_task37_4.png" />
+    <Content Include="Content\images\icon_task53_1.png" />
+    <Content Include="Content\images\icon_task6.png" />
+    <Content Include="Content\images\icon_task7.png" />
+    <Content Include="Content\images\icon_task9.png" />
+    <Content Include="Content\images\icon_tips1.png" />
+    <Content Include="Content\images\icon_tips2.png" />
+    <Content Include="Content\images\icon_warning_1.png" />
+    <Content Include="Content\images\icon_web13.png" />
+    <Content Include="Content\images\Lg-logo.png" />
+    <Content Include="Content\images\Loading-1Course-1.gif" />
+    <Content Include="Content\images\Loading.gif" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo01.png" />
+    <Content Include="Content\images\logo_org.png" />
+    <Content Include="Content\images\mark.png" />
+    <Content Include="Content\images\pic_course.png" />
+    <Content Include="Content\images\pic_course02.png" />
+    <Content Include="Content\images\pic_head3.jpg" />
+    <Content Include="Content\images\school-log.jpg" />
+    <Content Include="Content\images\sort.png" />
+    <Content Include="Content\images\toptriangle.png" />
+    <Content Include="Content\images\triangle-block.png" />
+    <Content Include="Content\images\triangle.jpg" />
+    <Content Include="Content\images\weixin-weibo.jpg" />
+    <Content Include="Content\New-style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -159,6 +289,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -170,6 +301,28 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Activity\ActivityCreate.cshtml" />
+    <Content Include="Views\Activity\ActivityDetail.cshtml" />
+    <Content Include="Views\Activity\ActivityList.cshtml" />
+    <Content Include="Views\Activity\RecruitDetail.cshtml" />
+    <Content Include="Views\Activity\RecruitList.cshtml" />
+    <Content Include="Views\Activity\TopicCreate.cshtml" />
+    <Content Include="Views\Activity\TopicDetail.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Donate\DonateCreate.cshtml" />
+    <Content Include="Views\Donate\DonateDetail.cshtml" />
+    <Content Include="Views\Donate\DonateList.cshtml" />
+    <Content Include="Views\News\HomePage.cshtml" />
+    <Content Include="Views\News\NewsDetail.cshtml" />
+    <Content Include="Views\News\NewsPub.cshtml" />
+    <Content Include="Views\Origanization\ClassList.cshtml" />
+    <Content Include="Views\Origanization\OrganizationCreate.cshtml" />
+    <Content Include="Views\Origanization\OriganizationDetail.cshtml" />
+    <Content Include="Views\Origanization\OriganizationList.cshtml" />
+    <Content Include="Views\Service\CardService.cshtml" />
+    <Content Include="Views\Service\EmailService.cshtml" />
+    <Content Include="Views\Service\SchoolServiceRequest.cshtml" />
+    <Content Include="Views\Service\WeChatWeBlog.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -181,9 +334,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -203,6 +353,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlumniMis.Common\AlumniMis.Common.csproj">
+      <Project>{0edd8367-c03a-4d55-934b-ca94531af92f}</Project>
+      <Name>AlumniMis.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlumniMis.Data\AlumniMis.Data.csproj">
+      <Project>{F9924C86-87DF-49D6-96EA-CAAE1C8B7998}</Project>
+      <Name>AlumniMis.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlumniMis.Services\AlumniMis.Services.csproj">
+      <Project>{39FC5944-57BE-45AA-BFDB-21557308D8F4}</Project>
+      <Name>AlumniMis.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

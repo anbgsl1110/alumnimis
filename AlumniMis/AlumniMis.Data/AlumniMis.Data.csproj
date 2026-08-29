@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9924C86-87DF-49D6-96EA-CAAE1C8B7998}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlumniMis.Data</RootNamespace>
+    <AssemblyName>AlumniMis.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBase\InitData.cs" />
+    <Compile Include="DataBase\InitDbContext.cs" />
+    <Compile Include="DataTable\Activity.cs" />
+    <Compile Include="DataTable\AdminInfo.cs" />
+    <Compile Include="DataTable\AlumniInfo.cs" />
+    <Compile Include="DataTable\AlumniOrgan.cs" />
+    <Compile Include="DataTable\Donate.cs" />
+    <Compile Include="DataTable\RequestService.cs" />
+    <Compile Include="DataTable\NewRelease.cs" />
+    <Compile Include="DataTable\User.cs" />
+    <Compile Include="DbFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\IProvider\IActivityProvider.cs" />
+    <Compile Include="Provider\IProvider\IAdminInfoProvider.cs" />
+    <Compile Include="Provider\IProvider\IAlumniInfoProvider.cs" />
+    <Compile Include="Provider\IProvider\IAlumniOrganProvider.cs" />
+    <Compile Include="Provider\IProvider\IBaseProvider.cs" />
+    <Compile Include="Provider\IProvider\IDonateProvider.cs" />
+    <Compile Include="Provider\IProvider\INewReleaseProvider.cs" />
+    <Compile Include="Provider\IProvider\IRequestServiceProvider.cs" />
+    <Compile Include="Provider\IProvider\IUserProvider.cs" />
+    <Compile Include="Provider\Provider\ActivityProvider.cs" />
+    <Compile Include="Provider\Provider\AdminInfoProvider.cs" />
+    <Compile Include="Provider\Provider\AlumniInfoProvider.cs" />
+    <Compile Include="Provider\Provider\AlumniOrganProvider.cs" />
+    <Compile Include="Provider\Provider\BaseProvider.cs" />
+    <Compile Include="Provider\Provider\DonateProvider.cs" />
+    <Compile Include="Provider\Provider\NewReleaseProvider.cs" />
+    <Compile Include="Provider\Provider\RequestServiceProvider.cs" />
+    <Compile Include="Provider\Provider\UserProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlumniMis.Common\AlumniMis.Common.csproj">
+      <Project>{0EDD8367-C03A-4D55-934B-CA94531AF92F}</Project>
+      <Name>AlumniMis.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

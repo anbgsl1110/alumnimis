@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>待审核事项</title>
+    <link href="../../../Content/css/layout.css" rel="stylesheet">
+    <link href="../../../Content/css/style.css" rel="stylesheet">
+    <link href="../../../Content/css/New-style.css" rel="stylesheet">
+    <style>
+        .new-container{
+            padding-bottom:20px;
+        }
+        .audit-org h3,.audit-donate h3, .audit-recruit h3,.audit-act h3, .audit-topic h3{
+            padding:10px;
+
+        }
+        .org-list, .donate-list,.recruit-list,.topic-list,.act-list{
+            height:193px;
+            margin:10px;
+            border:1px solid #ccc;
+            overflow: hidden;
+        }
+        .org-detail, .donate-detail,.recruit-detail, .topic-detail,.act-detail{
+            width:100%;
+            height:24px;
+            border-bottom:1px dashed  #ccc;
+            line-height:24px;
+            padding:0 5px;
+            cursor:pointer;
+        }
+        .org-detail div,.donate-detail div,.recruit-detail div,.act-detail div,.topic-detail div{
+            float:left;
+
+        }
+        .org-detail .org-tit,.donate-detail .donate-tit,.recruit-detail  .recruit-tit,.topic-detail .topic-tit,.act-detail  .act-tit{
+            width:60%;
+            text-align:center;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+        }
+        .org-detail .org-aut ,.donate-detail .donate-aut ,.recruit-detail .recruit-aut,.act-detail .act-aut ,.topic-detail .topic-aut{
+            width:25%;
+            text-align:center;
+        }
+        .org-detail .org-time,.donate-detail .donate-time, .recruit-detail .recruit-time,.act-detail .act-time, .topic-detail .topic-time{
+            float:right;
+            width:15%;
+            text-align:center;
+        }
+        .mainbg{
+            background:#fff;
+            padding:20px;
+        }
+
+        .login-in{
+            float:right;
+            height:32px;
+            line-height:32px;;
+        }
+        .login-in a{
+            color:#fff;
+            cursor:pointer;
+        }
+        /*  登录注册的弹窗ＣＳＳ*/
+        .password-change,.login-win{
+            position:fixed;
+            left:35%;
+            top:20%;
+            width:400px;
+            padding:20px;
+            height:350px;
+            border:1px solid #afafaf;
+            border-radius:3px;
+            background:#fff;
+        }
+        .password-change h3,.register-win h3, .login-win h3{
+            width:100%;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            margin-bottom:20px;
+
+        }
+        .password-change div,.register-win div, .login-win div{
+            margin-bottom:20px;
+        }
+        .submit{
+            width:100%;
+            height:30px;
+            line-height:30px;
+            background:#00b4f5;
+            text-align: center;
+            margin-top:50px;
+        }
+        .submit button{
+            color:#fff;
+            background:none;
+            border:0 none;
+        }
+        .cancel{
+            position:absolute;
+            top:2px;
+            right:4px;
+            cursor:pointer;
+        }
+        .register-win{
+            position:fixed;
+            left:35%;
+            top:20%;
+            width:350px;
+            padding:20px;
+            height:470px;
+            border:1px solid #afafaf;
+            border-radius:3px;
+            background:#fff;
+
+        }
+        /*第二级子菜单的css*/
+        .first-menu{
+            position:relative;
+        }
+        .second-menu{
+            position:absolute;
+            left:3px;
+            top:32px;
+            background:#fff;
+            width:200px;
+            border:1px solid #a9a9a9;
+            border-radius:3px;
+
+        }
+        .second-menu li{
+            width:200px;
+            padding-left:20px;
+            border-radius:3px;
+            height:30px;
+            line-height:30px;
+
+
+        }
+        .second-menu li a{
+            font-size:14px;
+            color:#000;
+        }
+        .second-menu li:hover{
+            background:#00b4f5;
+        }
+    </style>
+</head>
+<body class="body-bgColor">
+<div class="body-layout">
+    <!-- 顶部导航与logo begin {-->
+    <div class="new-navbar-box new-navbar-fixed-top">
+        <div class="new-navbar-top" style="display: block;">
+            <div class="new-navbar-top-content">
+                <h3 class="new-navbar-top-title">校友信息管理系统</h3>
+                <div class="login-in">
+                    <a>请登录</a>
+                </div>
+                <div class="new-navbar-userID" style="display:none;">
+                    欢迎校友<span class="new-navbar-userName">周树琴</span><em class="Drop-icon"></em>
+                    <div class="Drop-box">
+                        <span class="Drop-box-item">修改密码</span>
+                        <span class="Drop-box-item">注销</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-navbar">
+            <div class="new-container clearfix">
+                <div class="new-navbar-header" style="display: block;">
+                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="../../../Content/images/school-log.jpg" width="50" height="50"></a>
+                </div>
+                <div class="new-navbar-nav navbar-content">
+                    <!-- 导航里面的一级导航 begin {-->
+                    <ul class="new-navbar-nav-left clearfix">
+                        <li class="new-navbar-nav-item"><a href="../news/home-page.html" class="nav-current">首页</a></li>
+                        <li class="new-navbar-nav-item"><a href="../origanization/organization-list.html">校友组织</a></li>
+                        <li class="new-navbar-nav-item"><a href="../activity/act-topic.html">校友天地</a></li>
+                        <li class="new-navbar-nav-item first-menu"><a href="../service/card-service.html">校友服务</a>
+                            <ul class="second-menu" style="display:none">
+                                <li><a href="card-service.html">校友卡服务</a></li>
+                                <li><a href="service-Almuin.html">校友接待</a></li>
+                                <li><a href="service-email.html">校友邮箱</a></li>
+                                <li><a href="weixim-weibo.html">母校校友服务组织</a></li>
+                            </ul>
+                        </li>
+                        <li class="new-navbar-nav-item"><a href="../Donate/donate-list.html">校友捐赠</a></li>
+                        <li class="new-navbar-nav-item"><a href="../contact/contact.html">联系我们</a></li>
+                    </ul>
+                    <!--} 导航里面的一级导航 end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--} 顶部导航与logo end -->
+    <div class="new-container mainbg">
+        <div class="audit-org">
+            <h3>待审核组织信息</h3>
+            <div class="org-list">
+                <div class="org-detail">
+                    <div class="org-tit">组织名称</div><div class="org-aut">申请人</div><div class="org-time">申请时间</div>
+                </div>
+                <div class="org-detail" onclick="window.location.href= 'audit-detail.html';return false">
+                    <div class="org-tit">安徽校友组织</div><div class="org-aut">13级校友</div><div class="org-time">2017-5-12</div>
+                </div>
+            </div>
+        </div>
+        <div class="audit-topic">
+            <h3>待审核话题</h3>
+            <div class="topic-list">
+                <div class="topic-detail">
+                    <div class="topic-tit">话题标题</div><div class="topic-aut">发布人</div><div class="topic-time">发布时间</div>
+                </div>
+                <div class="topic-detail" onclick="window.location.href= 'audit-detail.html';return false">
+                    <div class="topic-tit">校参与承办“2017年全国微波毫米波会议”</div><div class="topic-aut">电子信息学院</div><div class="topic-time">2017-05-12</div>
+                </div>
+            </div>
+        </div>
+        <div class="audit-act">
+            <h3>待审核活动</h3>
+            <div class="act-list">
+                <div class="act-detail">
+                    <div class="act-tit">活动标题</div><div class="act-aut">发布人</div><div class="act-time">发布时间</div>
+                </div>
+                <div class="act-detail" onclick="window.location.href= 'audit-detail.html';return false">
+                    <div class="act-tit">著名校友被聘为中科院院士</div><div class="act-aut">校团委</div><div class="act-time">2017-5-12</div>
+                </div>
+            </div>
+        </div>
+        <div class="audit-donate">
+            <h3>待审核捐赠项目</h3>
+            <div class="donate-list">
+                <div class="donate-detail">
+                    <div class="donate-tit">捐赠标题</div><div class="donate-aut">发布人</div><div class="donate-time">发布时间</div>
+                </div>
+                <div class="donate-detail" onclick="window.location.href= 'audit-detail.html';return false">
+                    <div class="donate-tit">为母校捐赠一座实验楼</div><div class="donate-aut">13级信管校友</div><div class="donate-time">2017-5-12</div>
+                </div>
+            </div>
+        </div>
+        <div class="audit-recruit">
+            <h3>待审核招聘信息</h3>
+            <div class="recruit-list">
+                <div class="recruit-detail">
+                    <div class="recruit-tit">活动标题</div><div class="recruit-aut">发布人</div><div class="recruit-time">发布时间</div>
+                </div>
+                <div class="recruit-detail" onclick="window.location.href= 'audit-detail.html';return false">
+                    <div class="recruit-tit">淘宝招聘后台工程师</div><div class="recruit-aut">13级校友</div><div class="recruit-time">2017-5-12</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+<script src="../../../Scripts/jquery-1.10.2.min.js">
+</script>
+<script>
+</script>
+</body>
+</html>

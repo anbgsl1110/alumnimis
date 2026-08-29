@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>发布新闻</title>
+    <link href="../../../Content/css/layout.css" rel="stylesheet">
+    <link href="../../../Content/css/style.css" rel="stylesheet">
+    <link href="../../../Content/css/New-style.css" rel="stylesheet">
+
+    <style>
+        .new-container{
+            padding-bottom:20px;
+        }
+        .mainbg{
+            background:#fff;
+            padding: 20px 20px ;
+        }
+    </style>
+</head>
+<body class="body-bgColor">
+<div class="body-layout">
+    <!-- 顶部导航与logo begin {-->
+    <div class="new-navbar-box new-navbar-fixed-top">
+        <div class="new-navbar-top" style="display: block;">
+            <div class="new-navbar-top-content">
+                <h3 class="new-navbar-top-title">校友信息管理系统</h3>
+                <div class="new-navbar-userID">
+                    欢迎校友<span class="new-navbar-userName">周树琴</span><em class="Drop-icon"></em>
+                    <div class="Drop-box">
+                        <span class="Drop-box-item">修改密码</span>
+                        <span class="Drop-box-item">注销</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-navbar">
+            <div class="new-container clearfix">
+                <div class="new-navbar-header" style="display: block;">
+                    <a class="new-navbar-brand" href="#" title="1COURSE"><img src="../../Content/images/school-log.jpg" width="50" height="50"></a>
+                </div>
+                <div class="new-navbar-nav navbar-content">
+                    <!-- 导航里面的一级导航 begin {-->
+                    <ul class="new-navbar-nav-left clearfix">
+                        <li class="new-navbar-nav-item"><a href="#" >首页</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友组织</a></li>
+                        <li class="new-navbar-nav-item"><a href="#" class="nav-current">校友天地</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友服务</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">校友捐赠</a></li>
+                        <li class="new-navbar-nav-item"><a href="#">联系我们</a></li>
+                    </ul>
+                    <!--} 导航里面的一级导航 end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--} 顶部导航与logo end -->
+    <div class="new-container mainbg">
+        <div class="tooltip-bar clearfix">
+            <div class="tooltip-bar-address">
+                您的位置：<a href="home-page.html" class="user-address">首页</a> <em>&#62</em> 发布新闻
+            </div>
+        </div>
+        <div class="inteset-org">
+            <div class="new-section">
+                <div class="detail-head">发布新闻</div>
+                <div class="detail-middle5">
+                    <div class="clearfix">
+                        <ul class="user-box-ul clearfix">
+                            <li class="clearfix">
+                                <span class="detail-title1">新闻标题</span>
+                                <input type="text" class="form-text-normal">
+
+                            </li>
+                            <li class="clearfix">
+                                <span class="detail-title1">新闻作者</span>
+                                <input type="text" class="form-text-normal">
+
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="clearfix">
+                        <div class="detail-title1">新闻标签</div>
+                        <ul class="new-detail-style">
+                            <li class="new-detail-item"><!-- 有权限删除的时候li上增加样式 could-delete，鼠标经过就会显示删除按钮 -->
+                                <span class="option-city-item">系统实施</span>
+                                <em class="delete-icon">✖</em>
+                            </li>
+                            <li>
+                                <div class="input-tag" style="display:none;"><span class="detail-title1">请输入标签名</span><input type="text" id="tag" class="form-text-normal"/></div>
+                                <button type="button" class="btn-add-s1" title="添加"></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">
+                        <span class="detail-title1">新闻内容</span>
+                        <textarea class="form-text-area-s2" style="width:889px;height:260px;"></textarea>
+                    </div>
+
+                </div>
+                <div class="new-detail-bottom clearfix">
+                    <button type="button" class="btn-default btn-sure">发布</button>
+                    <button type="button" class="btn-default btn-cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../Scripts/jquery-1.10.2.min.js">
+</script>
+<script>
+    /* 添加新标签和删除标签*/
+    $(".delete-icon").click(function() {
+        $(this).parent().remove();
+    })
+    $(".btn-add-s1").click(function() {
+        $(this).hide();
+        $(".input-tag").show().attr("value",'');
+
+    });
+    /* "创建新标签"*/
+    $(".form-text-normal").keypress(function(){
+        if (event.keyCode == 13) {
+
+            var $text = $("#tag").val();
+            $(".btn-add-s1").show();
+            $(".input-tag").hide();
+            if ($text == "") {
+
+
+            } else {
+                var $htm = $(' <li class="new-detail-item">' +
+                    '<span class="option-city-item">' +
+                    $text +
+                    '</span>' +
+                    '<em class="delete-icon">✖</em>' +
+                    ' </li>');
+                $(".new-detail-style").prepend($htm);
+                $(".delete-icon").on("click", function() {
+                    $(this).parent().remove();
+                })
+
+            }
+        }
+
+    });
+</script>
+</body>
+</html>

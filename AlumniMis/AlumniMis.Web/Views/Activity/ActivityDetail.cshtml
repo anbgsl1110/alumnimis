@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "活动详情";
+}
+
+<style>
+    .now-location{
+        margin-bottom:20px;
+    }
+    .datal-news h3{
+        width:100%;
+        text-align:center;
+        line-height:30px;
+        font-size:20px;
+    }
+    .detail{
+        height:24px;
+        line-height:24px;
+        text-align:right;
+    }
+    .datal-news p{
+        line-height:24px;
+        font-size:14px;
+    }
+    .datal-news img{
+        width:100%;
+        max-width:100%;
+        max-height:100%;
+    }
+    .mainbg{
+        background:#fff;
+        padding:30px;
+    }
+    .content_tit{
+        height:58px;
+        line-height:58px;
+        font-size:14px;
+    }
+    .content_comment textarea{
+        display:block;
+        width:808px;
+        height:95px;
+        line-height:20px;
+        font-size:13px;
+        padding:5px;
+        border:#999 1px solid;
+        overflow-y:auto;
+        resize:none;/*非IE设置是否能够拉伸*/
+    }
+    .content_comment .loginReg_login{
+        border:0 none;
+        margin-top:10px;
+        width:40px;
+        height:24px;
+        border-radius:3px;
+        line-height:24px;
+        background:#00b4f5;
+    }
+    .content_tit_comment{
+        line-height:68px;
+        overflow:hidden;
+        border-bottom:#d2dada 1px dashed;
+    }
+    .content_talk{
+        padding:19px 0 10px 0;
+    }
+    .content_talk dt{
+        height:30px;
+        color:#797979;
+    }
+    .content_talk dt span{
+        color:#9179a7;
+        margin:0 4px;
+    }
+    .content_talk dd{
+        line-height:17px;
+        text-decoration:underline;
+        color:#515050;
+        padding-left:10px;
+        border-left:#d5d5d5 2px solid;
+        margin-left:34px;
+    }
+    .add{
+        width:100%;
+        height:20px;
+        line-height:24px;
+        text-align:right;
+        cursor:pointer;
+    }
+    .add span{
+        display:inline-block;
+        line-height:24px;
+
+    }
+    .add img{
+        margin-top:-2px;
+        margin-right:4px;
+    }
+    .new-win{
+        position:fixed;
+        width:360px;
+        padding:20px;
+        height:300px !important;
+        border:1px solid #ccc;
+        left:30%;
+        top:20%;
+        background:#fff;
+    }
+    .cancel{
+        position:absolute;
+        top:2px;
+        right:4px;
+        cursor: pointer;
+    }
+    .new-win input{
+        border:1px solid #ccc;
+        line-height:24px;
+    }
+    .sub{
+        border-radius:5px;
+        width:auto;
+        height:24px;
+        line-height:24px;
+        background:#00b4f5;
+        margin-left:260px;
+        text-align:center;
+
+    }
+    .sub input{
+        background:none;
+        border: 0 none;
+        color:#fff;
+    }
+    textarea{
+        height:100px;
+    }
+    .loginReg_login{
+        color:#fff;
+    }
+</style>
+
+<div class="">
+    您的位置：<a href="/Activity/ActivityList" class="user-address">校友天地</a> <em>&#62</em>活动详情
+</div>
+<div class="add">
+    <img src="~/Content/images/btn_teacher_add.png" width="20" height="20"/><span>加入活动</span>
+</div>
+<div class="datal-news">
+    <h3> 2017京东氧气音乐节</h3>
+    <div class="detail"> <span class="new-aut">本文作者：13级安徽校友</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="new-time">2017-5-13</span></div>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        如火五月，2017京东氧气音乐节热力来袭，5月20、5月21日，杭州东方文化园，奔赴一年一度的“氧气之约”，爱，就要和你在一起。两大舞台星光璀璨：2017氧气大咖全面升级，华语金曲天王天后倾力助阵，民谣届扛把小分队一网打尽。更有氧气因子舞台全新上线，氧气新声代惊艳亮相。
+        五大功能区块其乐无穷：氧气大本营，氧气黑科技，氧气创意集、氧气美食区、氧气品牌馆，吃喝玩乐应有尽有，来氧气，纵呼吸。
+    </p>
+    <img/>
+</div>
+<h3 class="content_tit">发表评论</h3>
+<form class="content_comment">
+    <textarea></textarea>
+    <input class="loginReg_login" type="submit" value="提交" />
+</form>
+<h3 class="content_tit content_tit_comment">评论</h3>
+<dl class="content_talk">
+    <dt>13级信管校友<span>2017-05-14 17:17:17</span>发表</dt>
+    <dd>非常好非常好非常好非常好</dd>
+</dl>
+<div class="new-win" style="display:none;">
+    <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
+    <p>申请加入活动</p>
+    <p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:&nbsp; <input type="text" name="name" /></p>
+    <p>联系方式:&nbsp; <input type="text" name="tel" /></p>
+    申请原因：<textarea></textarea>
+    <div class="sub"> <input type="submit" value="提交申请" /></div>
+</div>
+
+<script>
+    /*导航切换*/
+    $(function($) {
+        $("#alumni_navbar3").addClass("nav-current");
+        $(".second-menu").hide();
+    });
+
+    $(".add").click(function() {
+        $(".new-win").show();
+    });
+    $(".cancel").click(function() {
+        $(this).parent().hide();
+    });
+</script>

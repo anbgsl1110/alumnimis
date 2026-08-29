@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "校友组织";
+}
+
+<style>
+    .add{
+        width:100%;
+        height:20px;
+        line-height:24px;
+        text-align:right;
+        cursor:pointer;
+    }
+    .add span{
+        display:inline-block;
+        line-height:24px;
+
+    }
+    .add img{
+        margin-top:-2px;
+        margin-right:4px;
+    }
+    .location,.interest,  .inclass ,.college{
+        margin:0 10px;
+    }
+    .location h3,.interest h3, .inclass h3, .college h3{
+        margin-bottom:15px;
+    }
+    .location ul,.interest ul,.inclass ul,.college ul{
+        height:100px;
+    }
+    .location ul li,.interest ul li, .inclass ul li, .college ul li{
+        float:left;
+        margin-right:30px;
+        height:24px;
+        line-height:24px;
+        cursor:pointer;
+    }
+</style>
+
+<div class="add"  onclick="window.location.href= '/Origanization/OrganizationCreate';return false">
+    <img src="~/Content/images/btn_teacher_add.png" width="20" height="20"/><span>创建组织</span>
+</div>
+<div class="college">
+    <h3>按所在院系分类</h3>
+    <ul>
+        <li><a href="/Origanization/ClassList">管理学院</a></li>
+    </ul>
+</div>
+<div class="inclass">
+    <h3>按入学年份分类</h3>
+    <ul>
+        <li><a href="/Origanization/ClassList">2017级班级</a></li>
+    </ul>
+</div>
+<div class="location">
+    <h3>按地域分类</h3>
+    <ul>
+        <li><a href="/Origanization/OriganizationDetail">安徽校友组织</a></li>
+    </ul>
+</div>
+<div class="interest">
+    <h3>按兴趣分类</h3>
+    <ul>
+        <li><a href="/Origanization/OriganizationDetail">篮球校友组织</a></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function($) {
+        $("#alumni_navbar2").addClass("nav-current");
+        $(".second-menu").hide();
+    });
+</script>

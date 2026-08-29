@@ -1,0 +1,185 @@
+﻿@using AlumniMis.Data.DataTable
+
+@{
+    ViewBag.Title = "捐赠详情";
+    Donate donate = ViewBag.Donate as Donate;
+}
+
+<style>
+    .now-location{
+        margin-bottom:20px;
+    }
+    .datal-news h3{
+        width:100%;
+        text-align:center;
+        line-height:30px;
+        font-size:20px;
+    }
+    .detail{
+        height:24px;
+        line-height:24px;
+        text-align:right;
+    }
+    .datal-news p{
+        line-height:24px;
+        font-size:14px;
+    }
+    .datal-news img{
+        width:100%;
+        max-width:100%;
+        max-height:100%;
+    }
+    .mainbg{
+        background:#fff;
+        padding:30px;
+    }
+    .content_tit{
+        height:58px;
+        line-height:58px;
+        font-size:14px;
+    }
+    .content_comment textarea{
+        display:block;
+        width:808px;
+        height:95px;
+        line-height:20px;
+        font-size:13px;
+        padding:5px;
+        border:#999 1px solid;
+        overflow-y:auto;
+        resize:none;/*非IE设置是否能够拉伸*/
+    }
+    .content_comment .loginReg_login{
+        border:0 none;
+        margin-top:10px;
+        width:40px;
+        height:24px;
+        border-radius:3px;
+        line-height:24px;
+        background:#00b4f5;
+    }
+    .content_tit_comment{
+        line-height:68px;
+        overflow:hidden;
+        border-bottom:#d2dada 1px dashed;
+    }
+    .content_talk{
+        padding:19px 0 10px 0;
+    }
+    .content_talk dt{
+        height:30px;
+        color:#797979;
+    }
+    .content_talk dt span{
+        color:#9179a7;
+        margin:0 4px;
+    }
+    .content_talk dd{
+        line-height:17px;
+        text-decoration:underline;
+        color:#515050;
+        padding-left:10px;
+        border-left:#d5d5d5 2px solid;
+        margin-left:34px;
+    }
+    .add{
+        width:100%;
+        height:20px;
+        line-height:24px;
+        text-align:right;
+        cursor:pointer;
+    }
+    .add span{
+        display:inline-block;
+        line-height:24px;
+
+    }
+    .add img{
+        margin-top:-2px;
+        margin-right:4px;
+    }
+    .new-win{
+        position:fixed;
+        width:360px;
+        padding:20px;
+        height:300px !important;
+        border:1px solid #ccc;
+        left:30%;
+        top:20%;
+        background:#fff;
+    }
+    .cancel{
+        position:absolute;
+        top:2px;
+        right:4px;
+        cursor: pointer;
+    }
+    .new-win input{
+        border:1px solid #ccc;
+        line-height:24px;
+    }
+    .sub{
+        border-radius:5px;
+        width:auto;
+        height:24px;
+        line-height:24px;
+        background:#00b4f5;
+        margin-left:260px;
+        text-align:center;
+
+    }
+    .sub input{
+        color:#fff;
+    }
+    .sub input{
+        background:none;
+        border: 0 none;
+    }
+    textarea{
+        height:100px;
+    }
+</style>
+
+<div class="">
+    您的位置：<a href="/Donate/DonateList" class="user-address">校友捐赠</a> <em>&#62</em> 捐赠详情
+</div>
+<div class="add">
+    <img src="~/Content/images/btn_teacher_add.png" width="20" height="20"/><span>我要捐赠</span>
+</div>
+<div class="datal-news">
+    <h3> @donate.Dname</h3>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        @donate.Dreason
+    </p>
+    <img/>
+</div>
+
+<h3 class="content_tit content_tit_comment">已捐赠校友</h3>
+<dl class="content_talk">
+    <dt>13级信管校友<span>2017-05-14 17:17:17</span>捐赠</dt>
+    <dd>10000元</dd>
+</dl>
+
+<div class="new-win" style="display:none;">
+    <i class="cancel"><img src="~/Content/images/icon_delete_1.png"/></i>
+    <b>我要捐赠</b>
+    <p>母校支付宝账号：XXXXXXXXXXXXX</p>
+    <p>母校银行卡号：XXXXXXXXXXXXXXXXXXXXX</p>
+    <p>感谢校友的支持！</p>
+</div>
+
+<script type="text/javascript">
+    $(function($) {
+        $("#alumni_navbar5").addClass("nav-current");
+        $(".second-menu").hide();
+    });
+</script>
+
+<script>
+    $(".add").click(function() {
+        $(".new-win").show();
+    });
+    $(".cancel").click(function() {
+        $(this).parent().hide();
+    })
+</script>
